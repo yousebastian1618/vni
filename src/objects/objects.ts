@@ -1,0 +1,388 @@
+export const NavigationBarItems = [
+  {
+    name: 'about',
+    label: 'About',
+  },
+  {
+    name: 'product-solution',
+    label: 'Product Solution',
+  },
+  {
+    name: 'regulatory-compliance',
+    label: 'Regulatory Compliance',
+  },
+  {
+    name: 'blog',
+    label: 'Blogs',
+  },
+  {
+    name: 'help',
+    label: 'Help',
+  },
+  {
+    name: 'contact-us',
+    label: 'Contact Us',
+  },
+  {
+    name: 'logout',
+    label: 'Logout',
+  },
+]
+
+export const AboutItems = [
+  {
+    title: "Who We Are",
+    body: "At Vitali Nutrition Inc., we bring over 40 years of combined experience in the dietary supplement industry. Based in Vancouver, BC, Canada, we specialize in OEM and ODM manufacturing services that help our partners bring products to market with speed, precision, and reliability." +
+      "\n\n" +
+      "We provide a comprehensive, end-to-end solution, including formulation, regulatory review, manufacturing, and supply of packaging materials - ensuring a seamless process from initial formulation design through finished, market-ready product.",
+    image: '/about/who_we_are.png'
+  },
+  {
+    title: "Our Mission",
+    body: "To deliver premium-quality supplements on schedule, enabling our partners to focus on expanding their brans while we manage the complete backend with expertise and care.",
+    image: '/about/our_mission.png'
+  },
+  {
+    title: "How Can We Help You?",
+    body: "We understand the challenges our client face: regulatory hurdles, quality risks, and costly delays. At Vitali Nutrition Inc., we remove the uncertainty with precise compliance, consistent quality, and reliable on-time delivery." +
+      "\n\n" +
+      "With our regulatory, manufacturing, and packaging solutions, you gain a trusted partner who ensure your supplements reach the market on time and in full compliance",
+    image: '/about/how_can_we_help.png'
+  }
+]
+
+export const ProductSolutionItems = [
+  {
+    header: {
+      name: 'ingredients',
+      label: 'Ingredients'
+    },
+    elements: [
+      {
+        name: 'active_ingredients',
+        label: 'APIS - Active Ingredients'
+      },
+      {
+        name: 'specialty_ingredients',
+        label: 'Specialty Ingredients'
+      },
+      {
+        name: 'vitamin_minerals',
+        label: 'Vitamins & Minerals'
+      },
+      {
+        name: 'herbals',
+        label: 'Herbals (ratio, standardized)'
+      },
+    ],
+    icon: '/product-solutions/ingredients.png',
+    message: "We source and supply <b>active pharmaceutical ingredients (APIs)</b>, specialty compounds, essential vitamins, minerals, and standardized herbal extracts. Every ingredient is chosen for its <b>quality</b> and consistency, forming the base for safe, effective products."
+  },
+  {
+    header: {
+      name: 'formulation',
+      label: 'Your Formulations'
+    },
+    elements: [
+      {
+        name: 'compound_efficacy',
+        label: 'Compound efficacy'
+      },
+      {
+        name: 'key_ingredients_identification',
+        label: 'Key Ingredients Identification'
+      },
+      {
+        name: 'manufacturing_feasibility',
+        label: 'Manufacturing feasibility'
+      },
+      {
+        name: 'organoleptic_development',
+        label: 'Organoleptic development'
+      },
+    ],
+    icon: '/product-solutions/formulations.png',
+    message: "Our team supports the full process of developing <b>market-ready formulas</b> — from identifying key ingredients and testing compound efficacy to assessing manufacturing feasibility and shaping organoleptic profiles (taste, texture, aroma). Each formula is designed to be <b>functional</b> and consumer-friendly."
+  },
+  {
+    header: {
+      name: 'manufacturing',
+      label: 'Manufacturing'
+    },
+    elements: [
+      {
+        name: 'capsules',
+        label: 'Capsules'
+      },
+      {
+        name: 'tablet',
+        label: 'Tablet'
+      },
+      {
+        name: 'softgel',
+        label: 'Softgel'
+      },
+      {
+        name: 'powder',
+        label: 'Powder'
+      },
+    ],
+    icon: '/product-solutions/manufacturing.png',
+    message: "With <b> and strict standards</b>, we manufacture products in multiple formats — <b>capsules, tablets, softgels, and powders</b>. Our process ensures precision, scalability, and compliance at every stage."
+  },
+  {
+    header: {
+      name: 'packaging',
+      label: 'Packaging'
+    },
+    elements: [
+      {
+        name: 'bottle_packaging',
+        label: 'Bottle Packaging'
+      },
+      {
+        name: 'blister_packaging',
+        label: 'Blister Packaging'
+      },
+      {
+        name: 'sachet_box_tubes',
+        label: 'Sachet, Box, Tubes'
+      },
+      {
+        name: 'label_printing',
+        label: 'Label Printing'
+      },
+    ],
+    icon: '/product-solutions/packaging.png',
+    message: "We provide <b>end-to-end packaging</b> solutions, including bottles, blisters, sachets, boxes, tubes, and professional label printing. Each option is designed for <b>durability</b> and shelf appeal, protecting product integrity while enhancing its presence."
+  },
+]
+
+export const RegulatoryComplianceMessage = "<b>We streamline the compliance process</b> across Canada, the USA, and global markets. From <b>licensing</b> and label reviews to <b>lab testing</b> and product submissions, we help ensure your products meet all <b>regulatory standards</b> efficiently and effectively.";
+
+export const RegulatoryComplianceItems = [
+  {
+    header: {
+      name: 'canadian_compliance',
+      label: 'Canadian Compliance'
+    },
+    elements: [
+      {
+        name: 'npm_master_file',
+        label: 'NPN - Master File'
+      },
+      {
+        name: 'npm_class_i_to_iii',
+        label: 'NPN - Class I to III'
+      },
+      {
+        name: 'site_license',
+        label: 'Site License'
+      },
+      {
+        name: 'license_factory_flow_set_up',
+        label: 'License & Factory Flow Set Up'
+      },
+      {
+        name: 'import_license',
+        label: 'Import License'
+      },
+      {
+        name: 'importer_of_record',
+        label: 'Importer of Record'
+      },
+      {
+        name: 'label_review',
+        label: 'Label Review'
+      },
+      {
+        name: 'lab_testing',
+        label: 'Lab Testing'
+      },
+      {
+        name: 'import_solutions',
+        label: 'Import Solutions'
+      },
+      {
+        name: 'amazon_compliance',
+        label: 'Amazon Compliance'
+      }
+    ],
+    icon: '/regulatory-compliance/canada.png'
+  },
+  {
+    header: {
+      name: 'usa_compliance',
+      label: 'USA Compliance'
+    },
+    elements: [
+      {
+        name: 'label_review',
+        label: 'Label Review'
+      },
+      {
+        name: 'supplements_facts_panel_creation',
+        label: 'Supplements Facts Panel Creation'
+      },
+      {
+        name: 'us_fda_consulting',
+        label: 'US FDA Consulting'
+      },
+    ],
+    icon: '/regulatory-compliance/america.png'
+  },
+  {
+    header: {
+      name: 'additional_compliance_service',
+      label: 'Additional Compliance Service'
+    },
+    elements: [
+      {
+        name: 'veterinary_health_products',
+        label: 'Veterinary Health Products'
+      },
+      {
+        name: 'cosmetics',
+        label: 'Cosmetics'
+      },
+      {
+        name: 'product_compliance_review',
+        label: 'Product Compliance Review'
+      },
+      {
+        name: 'hc_cosmetic_notification_submission',
+        label: 'HC Cosmetic Notification Submission'
+      },
+    ],
+    icon: '/regulatory-compliance/map.png'
+  }
+]
+
+export const FAQItems = [
+  {
+    index: 1,
+    question: 'What is an NPN?',
+    answer: 'NPN stands for Natural Product Number. In Canada, dietary supplements are termed “Natural Health Products”. The NPN is an unique number assigned to your Natural Health Product, regulated under Health Canada, and is required for any product to be sold in Canada, and would require complete issuance of a NPN prior to manufacturing and commencement of marketing and sales activities and/or importation.'
+  },
+  {
+    index: 2,
+    question: 'Application Overview',
+    answer: 'NPN applications are increasingly complex with the regulatory framework Health Canada is imposing as part of its mandate to regulate dietary supplements. In order to obtain a NPN for your product, Health Canada requires evidence to support your product’s safety, efficacy and quality. Some examples of information required in order to fulfil this requirement are as follows: ' +
+      '<ul>' +
+      '<li>Product Name</li>' +
+      '<li>Company under which the product is to be marketed under</li>' +
+      '<li>Manufacturer/Importer for the product and their Site Licence number</li>' +
+      '<li>Potency, Quantity of each medicinal ingredient (including solvents, herbal constituents and extraction ratios for herbal ingredients)</li>' +
+      '<li>Non-medicinal ingredients</li>' +
+      '<li>Delivery/dosage format</li>' +
+      '<li>Desired claims</li>' +
+      '<li>Proposed cautionary statements</li>' +
+      '</ul>' +
+      'Subsequent to establishing these details, documentation will need to be submitted to Health Canada, including the Product Licence Application form, Finished Product Specification, and more.'
+  },
+  {
+    index: 3,
+    question: 'The Process (formerly named Our Process)',
+    answer: 'Vitali will guides you through a tailored but efficient process in order to successfully secure your NPN. The bulk of the work is in the front end, and Vitali will see the process through for you. '+
+      '<ol>' +
+      '<li><b>NDA signing</b>: we recognize the importance of Intellectual Property and the immense effort our clients put in to designing specialty formulations. All communications remain strictly confidential, and are released only to parties necessary in obtaining the NPN (i.e. Health Canada, designated manufacturers, designated third party labs as deemed necessary by confirmation by you, the client).</li><br/>' +
+      '<li><b>Formulation assessment</b>: we will review your formulation and confirm viability of NPN approval, thereby providing an official quotation for the application. Vitali provides a guarantee for NPN approvals, with a 90% refund policy for unsuccessful applications. As such, we do not take on projects where formulations are flagged in cases where certain ingredients cannot be approved. At this stage, we will establish full formulation details in order to generate a Finished Product Specification, along with providing expert guidance on what claims can be made. This is the stage at which the heaviest lifting is done. Unlike other consulting companies, Vitali has a background in manufacturing of Natural Health Products, and has a key edge when it comes to establishing sound formulations and Finished Product Specifications.</li><br/>' +
+      '<li><b>Dossier Preparation</b>: We will generate the full application dossier and provide the Product Licence Application (PLA) draft for your review and confirmation. At this stage, a proposed label text will be provided to you to begin design work, allowing for more efficient use of time.</li><br/>' +
+      '<li><b>Submission Management</b>: Vitali will submit the dossier to Health Canada on your behalf and manage the submission until approval.</li><br/>' +
+      '<li><b>Label & Packaging Review</b>: Upon completion, we will provide a finalised label text, which you can use to update and complete design work on all packaging materials, along with confirming specifications with your manufacturer, and you’re on your way to product launch!</li><br/>' +
+      '</ol>'
+  },
+  {
+    index: 4,
+    question: 'Why do I need Vitali for NPN applications?',
+    answer: 'Unlike the US and various other countries, Health Canada has strict regulations requiring product registrations and assessments for what products can be sold on the market, entailing full compliance review of each individual product. The framework for this can be tricky, and require careful navigation of the complexities of the NHP regulations. We can help you streamline the process, avoiding delays in bureaucratic processing, and increase your chance for success.'
+  },
+  {
+    index: 5,
+    question: 'What testing is required for my NHP?',
+    answer: 'This will depend on your product; Vitali’s process covers guidance on what testing requirements are most optimal for ensuring safety and efficacy for your consumers, whilst managing associated testing costs from a business consideration standpoint.'
+  },
+  {
+    index: 6,
+    question: 'Do I need a licence when selling natural health products through Amazon Canada?',
+    answer: 'Yes, all NHPs marketed and sold in Canada, regardless of the channel in which the product is sold requires compliance to Health Canada’s regulations. Amazon specifically has a Product Compliance team which regularly reviews and audits products sold on its platform.'
+  },
+  {
+    index: 7,
+    question: 'How long will I need to wait for my NPN to be approved?',
+    answer: 'Vitali NHP will provide you guidance on estimated application times in the “Formulation Assessment” phase of our process. Service standards for Health Canada are updated periodically, and range between 60 calendar days to 210 calendar days (from acknowledgement of dossier receiving).'
+  },
+  {
+    index: 8,
+    question: 'How much will it cost to get my NPN through Vitali Nutrition?',
+    answer: 'Vitali’s fees for NPN application are tailored for each application. Due to the inherent formulation differences and regulatory navigation required to assess formulations and deliver to you the most optimal NPN licence, we find this tailored approach to be most suitable.<br/><br/>' +
+      'Additionally, we are currently in a transitional phase with a proposed bill to implement cost recovery for Health Canada’s Natural Health Product, wherein Health Canada is looking to implement various registration fees for NPN applications, which can range from hundreds of dollars to thousands of dollars, increasing every year for 7 years. As part of Vitali’s mission to help our customers provide quality Natural Health Products to the market to improve health outcomes for your customers, we are supporting various agencies who are at the forefront of fighting cost recovery in order to keep costs manageable for brand owners such as yourself.'
+  },
+]
+
+export const FooterItems = [
+  {
+    header: {
+      name: 'quick-link',
+      label: 'QUICK LINK'
+    },
+    elements: [
+      {
+        name: 'about',
+        label: 'About'
+      },
+      {
+        name: 'product-solutions',
+        label: 'Product Solutions'
+      },
+      {
+        name: 'regulatory-compliance',
+        label: 'Regulatory Compliance'
+      },
+      {
+        name: 'blog',
+        label: 'Blogs',
+      },
+      {
+        name: 'help',
+        label: 'Help'
+      },
+      {
+        name: 'contact-us',
+        label: 'Contact Us'
+      },
+    ]
+  },
+  {
+    header: {
+      name: 'disclaimer',
+      label: 'DISCLAIMER'
+    },
+    elements: [
+      {
+        name: 'disclaimer-message',
+        label: 'Vitali Nutrition Inc. provides OEM and ODM manufacturing services to support pharmaceutical partners. We do not sell or market medicines directly to consumers, nor do we provide medical advice. All clients are responsible for ensuring regulatory compliance and approvals in their respective markets. Information on this website is for general purposes only, and Vitali Nutrition Inc. assumes no liability for its use.'
+      }
+    ]
+  }
+]
+
+export const ContactUsMessage = '<b>Have a question?</b><br /><br /> We’re here to help! Our friendly and knowledgeable customer experience team love feedbacks from you! Feel free to reach us via phone, email or the form below.';
+
+export const ContactInfo = [
+  {
+    name: 'email',
+    icon: 'email',
+    info: `office@vitalinutri.com`
+  },
+  {
+    name: 'phone',
+    icon: 'phone',
+    info: `+1 778 325 3975`
+  },
+  {
+    name: 'location',
+    icon: 'address_pin',
+    info: `Office 8455, 408 - 55 Water Street, Vancouver\nBritish Columbia V6B1A1 Canada`
+  }
+]

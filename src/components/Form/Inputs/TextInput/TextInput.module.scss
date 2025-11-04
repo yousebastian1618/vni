@@ -1,0 +1,16 @@
+.inputContainer {
+  margin: 0.4rex auto;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  .inputLabel {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .inputElement {
+    border: 0.1px solid black;
+    padding: 0.5rex 1rex;
+    border-radius: 1ex;
+    font-size: 0.9rem;
+  }
+}

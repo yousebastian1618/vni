@@ -1,0 +1,40 @@
+.productSolutionItem {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 4rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 2rem 0;
+  .productSolutionLeft {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .imageContainer {
+      position: relative;
+      aspect-ratio: 1/1;
+      width: 20%;
+      .image {
+        object-fit: contain;
+      }
+    }
+    .title {
+      font-weight: bold;
+      color: var(--main-color);
+      font-size: 1.3rem;
+      margin: 1rem 0;
+    }
+    .elementsContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      & > * {
+
+      }
+    }
+  }
+  .productSolutionRight {
+    width: 70%;
+  }
+}

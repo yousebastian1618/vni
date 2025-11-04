@@ -1,0 +1,19 @@
+.contactUsContainer {
+  width: 70%;
+  margin: auto;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  .contactUsFormContainer {
+    width: 50%;
+  }
+  .imageContainer {
+    position: relative;
+    aspect-ratio: 1/1;
+    width: 50%;
+    .image {
+      object-fit: contain;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.navigationBarContainer {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1.5rem 1rem;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  .imageContainer {
+    position: relative;
+    aspect-ratio: 5/2;
+    width: 10%;
+    .image {
+      object-fit: contain;
+    }
+  }
+  .navigationBarItemsContainer {
+    & > * {
+      margin: 0 2rex;
+      font-weight: 600;
+      transition: 0.2s ease;
+      cursor: pointer;
+      &:hover {
+        color: var(--main-color);
+      }
+    }
+  }
+}

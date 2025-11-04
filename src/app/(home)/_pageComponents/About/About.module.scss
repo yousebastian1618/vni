@@ -1,0 +1,21 @@
+.aboutContainer {
+  width: 65%;
+  margin: auto;
+  .leftLayout, .rightLayout {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 5rem 0;
+    .aboutInfo {
+      width: 47%;
+    }
+    .imageContainer {
+      position: relative;
+      aspect-ratio: 5/3;
+      width: 47%;
+      .image {
+        object-fit: fill;
+      }
+    }
+  }
+}
