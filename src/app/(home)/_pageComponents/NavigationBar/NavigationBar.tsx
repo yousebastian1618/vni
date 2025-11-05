@@ -2,10 +2,14 @@ import styles from './NavigationBar.module.scss';
 import Image from "next/image";
 import {NavigationBarItems} from "@/objects/objects";
 
-export default function NavigationBar() {
+type Props = {
+  shrunk: boolean;
+}
+
+export default function NavigationBar({ shrunk }: Props) {
 
   return (
-    <div className={styles.navigationBarContainer}>
+    <div className={`${styles.navigationBarContainer} ${shrunk ? styles.shrunk : ''}`}>
       <div className={styles.imageContainer}>
         <Image
           className={styles.image}
