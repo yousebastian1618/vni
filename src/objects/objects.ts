@@ -386,3 +386,378 @@ export const ContactInfo = [
     info: `Office 8455, 408 - 55 Water Street, Vancouver\nBritish Columbia V6B1A1 Canada`
   }
 ]
+
+export const IconMap: any = {
+  twitter: {
+    name: 'twitter',
+    icon: 'fi fi-brands-twitter-alt'
+  },
+  meta: {
+    name: 'meta',
+    icon: 'fi fi-brands-meta'
+  },
+  youtube: {
+    name: 'youtube',
+    icon: 'fi fi-brands-youtube'
+  },
+  linkedIn: {
+    name: 'linkedIn',
+    icon: 'fi fi-brands-linkedin'
+  },
+  instagram: {
+    name: 'instagram',
+    icon: 'fi fi-brands-instagram'
+  },
+  arrow_down: {
+    name: 'arrow_down',
+    icon: 'fi fi-rr-angle-down'
+  },
+  edit: {
+    name: 'edit',
+    icon: 'fi fi-rr-pencil'
+  },
+  delete: {
+    name: 'delete',
+    icon: 'fi fi-rr-trash'
+  },
+  category: {
+    name: 'category',
+    icon: 'fi fi-rr-category'
+  },
+  keyword: {
+    name: 'keyword',
+    icon: 'fi fi-rr-input-text'
+  },
+  email: {
+    name: 'email',
+    icon: 'fi fi-rr-envelope'
+  },
+  password: {
+    name: 'password',
+    icon: 'fi fi-rr-lock'
+  },
+  swap: {
+    name: 'swap',
+    icon: 'fi fi-ss-swap'
+  },
+  name: {
+    name: 'name',
+    icon: 'fi fi-rr-id-card-clip-alt'
+  },
+  screen: {
+    name: 'screen',
+    icon: 'fi fi-rr-screen'
+  },
+  code: {
+    name: 'code',
+    icon: 'fi fi-rr-password-lock'
+  },
+  maintenance: {
+    name: 'maintenance',
+    icon: 'fi fi-rs-settings'
+  },
+  notification: {
+    name: 'notification',
+    icon: 'fi fi-rr-bell-notification-social-media'
+  },
+  title: {
+    name: 'title',
+    icon: 'fi fi-rr-text'
+  },
+  toggle_on: {
+    name: 'toggle_on',
+    icon: 'fi fi-rr-toggle-on'
+  },
+  toggle_off: {
+    name: 'toggle_off',
+    icon: 'fi fi-rr-toggle-off'
+  },
+  linkedin: {
+    name: 'linkedin',
+    icon: 'fi fi-brands-linkedin'
+  },
+  check: {
+    name: 'check',
+    icon: 'fi fi-rr-check'
+  },
+  x: {
+    name: 'x',
+    icon: 'fi fi-rr-cross-small'
+  },
+  x_circle: {
+    name: 'x_circle',
+    icon: 'fi fi-rr-circle-xmark'
+  },
+  phone: {
+    name: 'phone',
+    icon: 'fi fi-rr-phone-call'
+  },
+  address_pin: {
+    name: 'address_pin',
+    icon: 'fi fi-rr-marker'
+  },
+  email_circle: {
+    name: 'email_circle',
+    icon: 'fi fi-rr-circle-envelope'
+  },
+  question: {
+    name: 'question',
+    icon: 'fi fi-rr-interrogation'
+  },
+  info: {
+    name: 'info',
+    icon: 'fi fi-rr-info'
+  },
+  warning: {
+    name: 'warning',
+    icon: 'fi fi-rr-triangle-warning'
+  },
+  success: {
+    name: 'success',
+    icon: 'i fi-rr-check-circle'
+  },
+  check_circle: {
+    name: 'check_circle',
+    icon: 'i fi-rr-check-circle'
+  },
+  error: {
+    name: 'error',
+    icon: 'fi fi-rr-times-hexagon'
+  },
+  search: {
+    name: 'search',
+    icon: 'fi fi-rr-search'
+  },
+  key: {
+    name: 'key',
+    icon: 'fi fi-rr-key'
+  },
+  date: {
+    name: 'date',
+    icon: 'fi fi-rr-calendar-day'
+  },
+  list: {
+    name: 'list',
+    icon: 'fi fi-rr-list'
+  },
+  wizard: {
+    name: 'wizard',
+    icon: 'fi fi-rr-hat-wizard'
+  },
+  link: {
+    name: 'link',
+    icon: 'fi fi-ss-link-horizontal'
+  },
+  order: {
+    name: 'order',
+    icon: '"fi fi-rr-apps-sort'
+  },
+  grid: {
+    name: 'grid',
+    icon: 'fi fi-rr-apps'
+  },
+  image: {
+    name: 'image',
+    icon: 'fi fi-rr-picture'
+  },
+  video: {
+    name: 'video',
+    icon: 'fi fi-rr-play-alt'
+  },
+  file: {
+    name: 'file',
+    icon: 'fi fi-rr-file'
+  },
+  file_upload: {
+    name: 'file_upload',
+    icon: 'fi fi-rr-file-upload'
+  },
+  download: {
+    name: 'download',
+    icon: 'fi fi-rr-download'
+  },
+  checkbox: {
+    name: 'checkbox',
+    icon: 'fi fi-rr-checkbox'
+  },
+  square: {
+    name: 'square',
+    icon: 'fi fi-rr-square'
+  },
+  back: {
+    name: 'back',
+    icon: 'fi fi-rr-arrow-small-left'
+  },
+  video_file: {
+    name: 'video_file',
+    icon: 'fi fi-rr-file-video'
+  },
+  text: {
+    name: 'text',
+    icon: 'fi fi-rr-text'
+  },
+  "file-step": {
+    name: 'file-step',
+    icon: 'fi fi-rr-file-image'
+  },
+  "color-step": {
+    name: 'color-step',
+    icon: 'fi fi-rr-palette'
+  },
+  "text-step": {
+    name: 'text_step',
+    icon: 'fi fi-rr-text'
+  },
+  "image-step": {
+    name: 'image_step',
+    icon: 'fi fi-rr-images'
+  },
+  "final-step": {
+    name: 'final_step',
+    icon: 'fi fi-rr-overview'
+  },
+  small_arrow_right: {
+    name: 'small_arrow_right',
+    icon: 'fi fi-rr-arrow-small-right'
+  },
+  display: {
+    name: 'display',
+    icon: 'fi fi-rr-display-code'
+  },
+  width: {
+    name: 'width',
+    icon: 'fi fi-rr-ruler-horizontal'
+  },
+  height: {
+    name: 'height',
+    icon: 'fi fi-rr-ruler-vertical'
+  },
+  sort_stb: {
+    name: 'sort_stb',
+    icon: 'fi fi-rr-sort-amount-down'
+  },
+  sort_bts: {
+    name: 'sort_bts',
+    icon: 'fi fi-rr-sort-amount-up'
+  },
+  sort: {
+    name: 'sort',
+    icon: 'fi fi-rr-sort-alt'
+  },
+  role: {
+    name: 'role',
+    icon: 'fi fi-rr-id-card-clip-alt'
+  },
+  login_failure: {
+    name: 'login_failure',
+    icon: 'fi fi-rr-vote-nay'
+  },
+  first_page: {
+    name: 'first_page',
+    icon: 'fi fi-rr-angle-double-small-left'
+  },
+  last_page: {
+    name: 'last_page',
+    icon: 'fi fi-rr-angle-double-small-right'
+  },
+  previous_page: {
+    name: 'previous_page',
+    icon: 'fi fi-rr-angle-small-left'
+  },
+  next_page: {
+    name: 'next_page',
+    icon: 'fi fi-rr-angle-small-right'
+  },
+  duration: {
+    name: 'duration',
+    icon: 'fi fi-rr-video-duration'
+  },
+  description: {
+    name: 'description',
+    icon: 'fi fi-rr-poll-h'
+  },
+  render_time: {
+    name: 'render_time',
+    icon: 'fi fi-rr-pending'
+  },
+  after_effect: {
+    name: 'after_effect',
+    icon: 'fi fi-brands-after-effects'
+  },
+  frame_number: {
+    name: 'frame_number',
+    icon: 'fi fi-rr-mode-landscape'
+  },
+  card: {
+    name: 'card',
+    icon: 'fi fi-rr-credit-card'
+  },
+  cvv: {
+    name: 'cvv',
+    icon: 'fi fi-rr-cvv-card'
+  },
+  postal_code: {
+    name: 'postal_code',
+    icon: 'fi fi-rr-mailbox'
+  },
+  days: {
+    name: 'days',
+    icon: 'fi fi-rr-calendar-days'
+  },
+  plus: {
+    name: 'plus',
+    icon: 'fi fi-rr-plus'
+  },
+  plus_small: {
+    name: 'plus_small',
+    icon: 'fi fi-rr-plus-small'
+  },
+  uploading: {
+    name: 'uploading',
+    icon: 'fi fi-rr-progress-upload'
+  },
+  fail: {
+    name: 'fail',
+    icon: 'fi fi-rr-fail'
+  },
+  rotate_right: {
+    name: 'rotate_right',
+    icon: 'fi fi-rr-rotate-right'
+  },
+  refresh: {
+    name: 'refresh',
+    icon: 'fi fi-rr-refresh'
+  },
+  update: {
+    name: 'update',
+    icon: 'fi fi-rr-cloud-upload'
+  },
+  support: {
+    name: "support",
+    icon: 'fi fi-rr-admin-alt'
+  },
+  regenerate: {
+    name: "regenerate",
+    icon: 'fi fi-rr-magic-wand'
+  },
+  subscription: {
+    name: "subscription",
+    icon: 'fi fi-rr-subscription-user'
+  },
+  cancel: {
+    name: 'cancel',
+    icon: 'fi fi-rr-times-hexagon'
+  },
+  arrow_left: {
+    name: 'arrow_left',
+    icon: 'fi fi-br-angle-left'
+  },
+  arrow_right: {
+    name: 'arrow_right',
+    icon: 'fi fi-br-angle-right'
+  },
+  settings: {
+    name: 'settings',
+    icon: 'fi fi-rr-settings-sliders'
+  }
+}

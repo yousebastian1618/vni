@@ -81,3 +81,155 @@ export const ContactUsForm: InputElement[] = [
     }
   }
 ]
+
+export const LoginForm: InputElement[] = [
+  {
+    name: 'email',
+    label: 'Email',
+    type: 'email',
+    value: '',
+    required: true,
+    error: false,
+    errorMessage: '',
+    checkErrors: {
+      "NOT_EMPTY": {
+        criteria: "",
+        message: "Subject cannot be empty"
+      },
+      "FORMAT": {
+        criteria: "EMAIL",
+        message: "Invalid email format"
+      }
+    }
+  },
+  {
+    name: 'password',
+    label: 'Password',
+    type: 'password',
+    value: '',
+    required: true,
+    error: false,
+    errorMessage: '',
+    checkErrors: {
+      "NOT_EMPTY": {
+        criteria: "",
+        message: "Password cannot be empty"
+      }
+    }
+  }
+]
+
+export const RegisterForm: InputElement[] = [
+  {
+    name: 'email',
+    label: 'Email',
+    type: 'email',
+    value: '',
+    required: true,
+    error: false,
+    errorMessage: '',
+    checkErrors: {
+      "NOT_EMPTY": {
+        criteria: "",
+        message: "Subject cannot be empty"
+      },
+      "FORMAT": {
+        criteria: "EMAIL",
+        message: "Invalid email format"
+      }
+    }
+  },
+  {
+    name: 'password',
+    label: 'Password',
+    type: 'password',
+    value: '',
+    required: true,
+    error: false,
+    errorMessage: '',
+    checkErrors: {
+      "NOT_EMPTY": {
+        criteria: "",
+        message: "Password cannot be empty"
+      }
+    }
+  },
+  {
+    name: 'confirmPassword',
+    label: 'Confirm Password',
+    type: 'password',
+    value: '',
+    required: true,
+    error: false,
+    errorMessage: '',
+    checkErrors: {
+      "NOT_EMPTY": {
+        criteria: "",
+        message: "Password cannot be empty"
+      },
+      "MATCH": {
+        criteria: "password",
+        message: "Password does not match"
+      }
+    }
+  }
+]
+
+export const ForgotPasswordForm: InputElement[] = [
+  {
+    name: 'email',
+    label: 'Email',
+    type: 'email',
+    value: '',
+    required: true,
+    error: false,
+    errorMessage: '',
+    checkErrors: {
+      "NOT_EMPTY": {
+        criteria: "",
+        message: "Subject cannot be empty"
+      },
+      "FORMAT": {
+        criteria: "EMAIL",
+        message: "Invalid email format"
+      }
+    }
+  }
+]
+
+export const ResetPasswordForm: InputElement[] = [
+  {
+    name: 'newPassword',
+    label: 'New Password',
+    type: 'password',
+    value: '',
+    required: true,
+    error: false,
+    errorMessage: '',
+    checkErrors: {
+      "NOT_EMPTY": {
+        criteria: "",
+        message: "Password cannot be empty"
+      }
+    }
+  },
+  {
+    name: 'confirmPassword',
+    label: 'Confirm Password',
+    type: 'password',
+    value: '',
+    required: true,
+    error: false,
+    errorMessage: '',
+    checkErrors: {
+      "NOT_EMPTY": {
+        criteria: "",
+        message: "Password cannot be empty"
+      },
+      "MATCH": {
+        criteria: "newPassword",
+        message: "Password does not match"
+      }
+    }
+  }
+]

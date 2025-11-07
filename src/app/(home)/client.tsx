@@ -1,5 +1,4 @@
 'use client'
-
 import styles from './Home.module.scss';
 import NavigationBar from "@/app/(home)/_pageComponents/NavigationBar/NavigationBar";
 import Introduction from "@/app/(home)/_pageComponents/Introduction/page";
@@ -11,6 +10,8 @@ import FAQ from "@/app/(home)/_pageComponents/FAQ/FAQ";
 import {FAQItems} from "@/objects/objects";
 import ContactUs from "@/app/(home)/_pageComponents/ContactUs/ContactUs";
 import {useEffect, useRef, useState} from "react";
+import Blogs from "@/app/(home)/_pageComponents/Blogs/Blogs";
+import Footer from "@/app/(home)/_pageComponents/Footer/Footer";
 
 export default function HomeClient() {
 
@@ -49,11 +50,18 @@ export default function HomeClient() {
       <div className={styles.regulatoryCompliance}>
         <RegulatoryCompliance />
       </div>
+      <div className={styles.blogs}>
+        <Blogs />
+      </div>
       <div className={styles.faq}>
         <FAQ faqItems={FAQItems} />
       </div>
       <div className={styles.contactUs}>
         <ContactUs />
+      </div>
+      <div className={'horizontalLine'} />
+      <div className={styles.footer}>
+        <Footer />
       </div>
     </>
 

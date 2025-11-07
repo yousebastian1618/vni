@@ -1,0 +1,74 @@
+.footerContainer {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  padding: 2rem 0;
+  & > * {
+    margin: 0 2rem;
+  }
+  .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    .imageContainer {
+      position: relative;
+      aspect-ratio: 3/1;
+      width: 50%;
+      .image {
+        object-fit: contain;
+      }
+    }
+  }
+  .right {
+    .footerItemsContainer {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 3rem;
+      .footerItem {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        .footerItemTitle {
+          margin-bottom: 1rem;
+          color: var(--main-color);
+          letter-spacing: 0.5rex;
+          font-weight: 600;
+        }
+        .footerItemElement {
+          font-size: 0.9rem;
+          line-height: 3rex;
+          transition: 0.2s ease;
+          &.quickLink {
+            cursor:pointer;
+            width: fit-content;
+            line-height: 4rex;
+            &:hover {
+              color: var(--main-color);
+            }
+
+          }
+        }
+      }
+    }
+    .contactInfoContainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      & > *{
+        color: var(--main-color-grey);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .info {
+          text-align: center;
+        }
+        .icon {
+
+        }
+      }
+    }
+  }
+}
