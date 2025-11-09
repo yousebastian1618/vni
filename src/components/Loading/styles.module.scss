@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  .loadingContainer {
+    position: relative;
+    width: 80%;
+    z-index: 10;
+    aspect-ratio: 1/1;
+    .loading {
+      object-fit: contain;
+    }
+  }
+}

@@ -30,6 +30,7 @@ export default function FAQ({ faqItems }: Props) {
             src={'/faq.png'}
             alt={'FAQ image'}
             fill
+            sizes="(max-width: 768px) 40vw, (max-width: 1200px) 20vw, 10vw"
             draggable={false}
           />
         </div>

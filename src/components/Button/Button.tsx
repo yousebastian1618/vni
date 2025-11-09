@@ -1,5 +1,5 @@
 import type {Button} from "@/types/types";
-import {handleClickAction} from "@/actions/clickAction";
+import {useHandleClickAction} from "@/actions/clickAction";
 import React from "react";
 
 type Props = {
@@ -8,6 +8,8 @@ type Props = {
 }
 
 export default function Button({ button, handleButtonClick }: Props) {
+
+  const handleClickAction = useHandleClickAction();
 
   const handleClick = () => {
     (handleButtonClick ?? handleClickAction)(button);

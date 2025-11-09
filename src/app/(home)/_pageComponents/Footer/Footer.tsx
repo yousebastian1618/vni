@@ -13,6 +13,7 @@ export default function Footer() {
             src={'/logo.png'}
             alt="Logo"
             fill
+            sizes="(max-width: 768px) 40vw, (max-width: 1200px) 20vw, 10vw"
             draggable={false}
           />
         </div>

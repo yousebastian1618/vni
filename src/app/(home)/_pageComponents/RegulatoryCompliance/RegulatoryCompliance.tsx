@@ -8,9 +8,9 @@ export default function RegulatoryCompliance() {
       <div className={styles.title}>
         <div id={styles.title1}>Take Your Product</div>
         <div id={styles.title2}>
-          From
+          From&nbsp;
           <span id={styles.textIdea}>SUBMISSION</span>
-          to
+          &nbsp;to&nbsp;
           <span id={styles.textShelf}>APPROVAL</span>
         </div>
       </div>

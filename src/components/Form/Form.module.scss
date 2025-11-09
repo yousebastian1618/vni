@@ -3,8 +3,13 @@
   flex-direction: column;
   margin: auto;
 }
+.formFooter {
+  width: 70%;
+  margin :auto;
+}
 .formButtons {
-  margin: 1rem 0;
+  width: 70%;
+  margin: 1rem auto;
   display: flex;
-  justify-content: center;
+  justify-content: end;
 }

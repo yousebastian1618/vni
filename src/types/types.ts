@@ -23,3 +23,8 @@ export type Button = {
   crudType?: CrudType;
   keyDown?: string;
 }
+
+export type User = {
+  id: string;
+  email: string;
+}

@@ -8,14 +8,15 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(cuid())
+  id        String   @id @default(uuid())
   email     String   @unique
   password  String
+  token     String?
   createdAt DateTime @default(now())
 }
 
 model Blog {
-  id         String          @id @default(cuid())
+  id         String          @id @default(uuid())
   title      String
   subtitle   String
   author     String
@@ -26,7 +27,7 @@ model Blog {
 }
 
 model BlogParagraph {
-  id     String @id @default(cuid())
+  id     String @id @default(uuid())
   blogId String
   title  String
   text   String

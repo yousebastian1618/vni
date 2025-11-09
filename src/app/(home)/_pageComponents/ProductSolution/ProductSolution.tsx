@@ -12,7 +12,7 @@ export default function ProductSolution() {
         <div id={styles.title1}>Support You</div>
         <div id={styles.title2}>
           <span id={styles.textIdea}>IDEA</span>
-          to
+          &nbsp;to&nbsp;
           <span id={styles.textShelf}>SHELF</span>
         </div>
       </div>
@@ -29,6 +29,7 @@ export default function ProductSolution() {
                       src={'/down-arrow.png'}
                       alt={'Down Arrow'}
                       fill
+                      sizes="(max-width: 768px) 40vw, (max-width: 1200px) 20vw, 10vw"
                       draggable={false}
                     />
                   </div>

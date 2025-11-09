@@ -31,7 +31,8 @@ function TextInputBase({ inputElement, onChange, onBlur }: Props) {
     onBlur: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => handleBlur?.(e.target.value),
     'aria-invalid': error || undefined,
     'aria-describedby': error ? `${name}-error` : undefined,
-    name: name
+    name: name,
+    type: type
   };
 
   return (

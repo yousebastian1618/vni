@@ -1,0 +1,21 @@
+.formFooterContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  .formFooterElement {
+    font-size: 0.75rem;
+    color: var(--default-grey-font-color);
+    margin: 1rex 0;
+  }
+}
+
+.link {
+  color: #171717;
+  font-weight: bold;
+  font-size: 0.7rem;
+  transition: ease 0.2s;
+  &:hover {
+    color: var(--default-brandkit-color);
+  }
+}

@@ -1,3 +1,23 @@
-.AppContainer {
+.appContainer {
+}
 
+
+
+.loadingContainer {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+}
+.displayNone {
+  display: None;
+}
+
+.disableOpacity {
+  pointer-events: none;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(0.1px);
+  filter: brightness(50%);
 }
