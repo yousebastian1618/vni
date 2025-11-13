@@ -56,7 +56,7 @@ body {
   justify-content: left;
   align-items: center;
   background-color: var(--main-color);
-  padding: 1rem;
+  padding: 1.5rex 3rex;
 }
 .title-right {
   color: white;
@@ -66,7 +66,7 @@ body {
   justify-content: right;
   align-items: center;
   background-color: var(--main-color);
-  padding: 1rem;
+  padding: 1.5rex 3rex;
 }
 .horizontalLine {
   border-top: 0.1px solid black;

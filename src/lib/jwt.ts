@@ -2,11 +2,11 @@ import 'server-only';
 import {SignJWT, jwtVerify} from 'jose';
 
 const secret = new TextEncoder().encode(process.env.JWT_SECRET);
-const alg = 'HS256';
+const alg = process.env.JWT_ALG ?? "HS256";
 
 export async function signJwt(
   payload: Record<string, string>,
-  expiresIn = "12h"
+  expiresIn = `${process.env.JWT_ACCESS_TTL_HOUR}h`
 ) {
   return await new SignJWT(payload)
     .setProtectedHeader({ alg: alg })

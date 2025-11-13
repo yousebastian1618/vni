@@ -1,20 +1,25 @@
 .aboutContainer {
-  width: 65%;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
   .leftLayout, .rightLayout {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    padding: 5rem 0;
+    gap: 2rem;
+    @media (max-width: 1400px) {
+      flex-direction: column;
+    }
     .aboutInfo {
-      width: 47%;
+      width: 100%;
     }
     .imageContainer {
       position: relative;
       aspect-ratio: 5/3;
-      width: 47%;
+      width: 100%;
       .image {
         object-fit: fill;
+        mask-image: radial-gradient(circle, black 70%, transparent 100%);
       }
     }
   }

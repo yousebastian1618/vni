@@ -1,0 +1,24 @@
+@mixin circleTitle {
+  display: flex;
+  flex-direction: column;
+  justify-items: start;
+  padding: 1rem 2rem;
+  width: fit-content;
+  border-radius: 8em;
+  background-color: white;
+  #title1 {
+    font-size: 2.5ex;
+    font-weight: bold;
+  }
+  #title2 {
+    font-size: 5ex;
+    #textIdea {
+      color: var(--main-color-orange);
+      font-weight: 1000;
+    }
+    #textShelf {
+      color: var(--main-color-green);
+      font-weight: 1000;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 'use client'
 import React, { createContext, useContext, useEffect, useState, useMemo } from 'react';
 import {User} from "@/types/types";
-import {apiGET, apiPOST} from "@/actions/apiAction";
+import {useApiAction} from "@/actions/apiAction";
 
 type Ctx = {
   user: User | null;
@@ -19,6 +19,7 @@ const authCtx = createContext<Ctx>({
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [ user, setUser ] = useState(null);
+  const { apiGET, apiPOST } = useApiAction();
 
   const checkAuth = async () => {
     const res = await apiGET('/auth/check-auth/');

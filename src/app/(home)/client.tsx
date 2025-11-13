@@ -32,32 +32,36 @@ export default function HomeClient() {
 
   return (
     <>
-      <div className={styles.navigationBar}>
-        <NavigationBar shrunk={isShrunk} />
+      <div className={styles.top}>
+        <div className={styles.navigationBar}>
+          <NavigationBar shrunk={isShrunk} />
+        </div>
+        <div className={styles.introduction} ref={introRef}>
+          <Introduction />
+        </div>
       </div>
-      <div className={styles.introduction} ref={introRef}>
-        <Introduction />
-      </div>
-      <div className={styles.about}>
-        <About />
-      </div>
-      <div className={styles.productionSolution}>
-        <ProductSolution />
-      </div>
-      <div className={styles.products}>
-        <Products />
-      </div>
-      <div className={styles.regulatoryCompliance}>
-        <RegulatoryCompliance />
-      </div>
-      <div className={styles.blogs}>
-        <Blogs />
-      </div>
-      <div className={styles.faq}>
-        <FAQ faqItems={FAQItems} />
-      </div>
-      <div className={styles.contactUs}>
-        <ContactUs />
+      <div className={styles.mainBody}>
+        <div className={styles.about}>
+          <About />
+        </div>
+        <div className={styles.productionSolution}>
+          <ProductSolution />
+        </div>
+        <div className={styles.products}>
+          <Products />
+        </div>
+        <div className={styles.regulatoryCompliance}>
+          <RegulatoryCompliance />
+        </div>
+        <div className={styles.blogs}>
+          <Blogs />
+        </div>
+        <div className={styles.faq}>
+          <FAQ faqItems={FAQItems} />
+        </div>
+        <div className={styles.contactUs}>
+          <ContactUs />
+        </div>
       </div>
       <div className={'horizontalLine'} />
       <div className={styles.footer}>

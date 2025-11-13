@@ -1,40 +1,23 @@
+@use '@/styles/global' as gstyle;
+
 .productSolutionContainer {
-  width: 70%;
+  width: 60%;
   margin: auto;
-  padding: 2rem 0;
+  padding: 5rem 0;
   .title {
-    display: flex;
-    flex-direction: column;
-    justify-items: start;
-    padding: 1rem 2rem;
-    width: fit-content;
-    border-radius: 8em;
-    background-color: white;
-    #title1 {
-      font-size: 2.5ex;
-      font-weight: bold;
-    }
-    #title2 {
-      font-size: 5ex;
-      #textIdea {
-        color: var(--main-color-orange);
-        font-weight: 1000;
-      }
-      #textShelf {
-        color: var(--main-color-green);
-        font-weight: 1000;
-      }
-    }
+    @include gstyle.circleTitle();
+    margin-bottom: 2rem;
   }
   .productSolutionItemsContainer {
+    display: flex;
+    flex-direction: column;
     & > * {
       .arrowIconContainer {
         position: relative;
         aspect-ratio: 1;
         width: 2rem;
-        margin: auto;
+        margin: 1rem auto;
         .arrow {
-
         }
       }
     }

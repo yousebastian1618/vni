@@ -1,22 +1,23 @@
 .faqContainer {
-  width: 70%;
-  margin: auto;
-  padding: 2rem 0;
   display: flex;
   align-items: flex-start;
-  & > * {
-    margin: 1rem
+  width: 60%;
+  margin: 4rem auto;
+  gap: 2rem;
+  @media (max-width: 1500px) {
+    flex-direction: column;
   }
   .imageContainer {
     position: relative;
     aspect-ratio: 3/2;
-    width: 50%;
+    width: 100%;
     .image {
       object-fit: contain;
+      mask-image: radial-gradient(circle, black 70%, transparent 100%);
     }
   }
   .faqItems {
-    width: 50%;
+    width: 100%;
     .qaContainer {
       .question {
         cursor: pointer;

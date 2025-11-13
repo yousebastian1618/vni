@@ -1,51 +1,36 @@
+@use '@/styles/global' as gstyle;
+
 .regulatoryComplianceContainer {
-  width: 70%;
-  margin: auto;
-  padding: 2rem 0;
+  width: 60%;
+  margin: 0 auto;
+  padding: 4rem 0;
   .title {
-    display: flex;
-    flex-direction: column;
-    justify-items: end;
-    margin-left: auto;
-    padding: 1rem 2rem;
-    width: fit-content;
-    border-radius: 8em;
-    background-color: white;
-    #title1 {
-      font-size: 2.5ex;
-      font-weight: bold;
-    }
-    #title2 {
-      font-size: 5ex;
-      #textIdea {
-        color: var(--main-color-orange);
-        font-weight: 1000;
-      }
-      #textShelf {
-        color: var(--main-color-green);
-        font-weight: 1000;
-      }
-    }
+    @include gstyle.circleTitle();
+    margin: 0 0 2rem auto;
   }
   .regulatoryComplianceItemsContainer {
-    padding: 2rem;
     background-color: white;
-    margin: 2rem 0;
-    border-radius: 4rem;
+    border-radius: 2rem;
+    padding: 4rem 1rem;
     .regulatoryComplianceMessage {
       width: 70%;
       text-align: center;
       margin: auto;
+      padding-bottom: 2rem;
+
     }
     .regulatoryComplianceItems {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 2rem;
+      @media (max-width: 1500px) {
+        display: flex;
+        flex-direction: column;
+      }
       & > * {
         box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
-        padding: 2rem 4rem;
-        margin: 2rem 0;
-        border-radius: 3rem;
+        border-radius: 1rex;
+        padding: 2rem 0;
       }
     }
   }

@@ -1,15 +1,35 @@
-.navigationBar {
+.top {
+  .navigationBar {
 
-}
-.introduction {
+  }
+  .introduction {
 
+  }
 }
-.about {
+.mainBody {
+  .about {
+    width: 60%;
+    margin: 5rem auto;
+  }
+  .productionSolution {
+    background-color: var(--background-color-green);
+  }
+  .products {
 
+  }
+  .regulatoryCompliance {
+    background-color: var(--background-color-green);
+  }
+  .blogs {
+
+  }
+  .faq {
+
+  }
+  .contactUs {
+
+  }
 }
-.productionSolution {
-  background-color: var(--background-color-green);
-}
-.regulatoryCompliance {
-  background-color: var(--background-color-green);
+.footer {
+
 }
