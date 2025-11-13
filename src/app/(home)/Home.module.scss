@@ -1,3 +1,5 @@
+@use '@/styles/global' as gstyle;
+
 .top {
   .navigationBar {
 
@@ -10,6 +12,11 @@
   .about {
     width: 60%;
     margin: 5rem auto;
+    opacity: 0;
+    transform: translateX(-50px);
+    &.fadeInStyle {
+      @include gstyle.fadeInLeft();
+    }
   }
   .productionSolution {
     background-color: var(--background-color-green);
@@ -19,6 +26,13 @@
   }
   .regulatoryCompliance {
     background-color: var(--background-color-green);
+    .regulatoryComplianceContainer {
+      opacity: 0;
+      transform: translateX(-50px);
+      &.fadeInStyle {
+        @include gstyle.fadeInLeft();
+      }
+    }
   }
   .blogs {
 

@@ -3,7 +3,17 @@ import Image from "next/image";
 import {ContactInfo, FooterItems} from "@/objects/objects";
 import Icon from "@/components/Icon/Icon";
 
-export default function Footer() {
+type Props = {
+  onQuickLinkClick: (sectionId: string) => void;
+}
+
+export default function Footer({ onQuickLinkClick }: Props) {
+
+  const handleQuickLinkClick = (sectionId: string) => {
+    onQuickLinkClick(sectionId);
+  }
+
+
   return (
     <div className={styles.footerContainer}>
       <div className={styles.left}>
@@ -26,7 +36,11 @@ export default function Footer() {
                 <h3 className={styles.footerItemTitle}>{footerItem.header.label.toUpperCase()}</h3>
                 {footerItem.elements.map((item, idx) => {
                   return (
-                    <span className={`${styles.footerItemElement} ${footerItem.header.name === 'quick-link' ? styles.quickLink : ''}`} key={idx}>
+                    <span className={`${styles.footerItemElement} 
+                          ${footerItem.header.name === 'quick-link' ? styles.quickLink : ''}`}
+                          key={idx}
+                          onClick={() => handleQuickLinkClick(item.name)}
+                    >
                       {item.label}
                     </span>
                   )

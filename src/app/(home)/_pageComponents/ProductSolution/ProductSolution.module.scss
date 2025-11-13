@@ -11,7 +11,12 @@
   .productSolutionItemsContainer {
     display: flex;
     flex-direction: column;
-    & > * {
+    .productSolution {
+      opacity: 0;
+      transform: translateX(-50px);
+      &.fadeInStyle {
+        @include gstyle.fadeInLeft();
+      }
       .arrowIconContainer {
         position: relative;
         aspect-ratio: 1;

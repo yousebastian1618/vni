@@ -16,6 +16,8 @@ import Footer from "@/app/(home)/_pageComponents/Footer/Footer";
 export default function HomeClient() {
 
   const introRef = useRef<HTMLDivElement | null>(null);
+  const aboutRef = useRef<HTMLDivElement | null>(null);
+  const rcRef = useRef<HTMLDivElement | null>(null);
   const [isShrunk, setIsShrunk] = useState(false);
 
   useEffect(() => {
@@ -27,45 +29,85 @@ export default function HomeClient() {
     );
 
     if (introRef.current) observer.observe(introRef.current);
-    return () => observer.disconnect();
+
+    const aboutEl = aboutRef.current;
+    const rcEl = rcRef.current;
+
+    if (!aboutEl || !rcEl) return;
+
+    const aboutObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          aboutEl.classList.add(styles.fadeInStyle);
+        }
+      }
+    )
+    const rcObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          rcEl.classList.add(styles.fadeInStyle);
+        }
+      }
+    )
+    aboutObserver.observe(aboutEl);
+    rcObserver.observe(rcEl);
+
+
+    return () => {
+      observer.disconnect();
+      aboutObserver.disconnect();
+      rcObserver.disconnect();
+    }
   }, []);
+
+  const handleQuickLinkClick = (sectionId: string) => {
+    const el = document.getElementById(sectionId);
+    if (!el) return;
+
+    el.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
 
   return (
     <>
       <div className={styles.top}>
         <div className={styles.navigationBar}>
-          <NavigationBar shrunk={isShrunk} />
+          <NavigationBar shrunk={isShrunk} onQuickLinkClick={(sectionId: string) => handleQuickLinkClick(sectionId)}/>
         </div>
         <div className={styles.introduction} ref={introRef}>
           <Introduction />
         </div>
       </div>
       <div className={styles.mainBody}>
-        <div className={styles.about}>
+        <div className={styles.about} id="about" ref={aboutRef}>
           <About />
         </div>
-        <div className={styles.productionSolution}>
+        <div className={styles.productionSolution} id={'productSolution'}>
           <ProductSolution />
         </div>
         <div className={styles.products}>
           <Products />
         </div>
-        <div className={styles.regulatoryCompliance}>
-          <RegulatoryCompliance />
+        <div className={styles.regulatoryCompliance} id={'regulatoryCompliance'} >
+          <div className={styles.regulatoryComplianceContainer} ref={rcRef}>
+            <RegulatoryCompliance />
+          </div>
         </div>
-        <div className={styles.blogs}>
+        <div className={styles.blogs} id={'blogs'}>
           <Blogs />
         </div>
         <div className={styles.faq}>
           <FAQ faqItems={FAQItems} />
         </div>
-        <div className={styles.contactUs}>
+        <div className={styles.contactUs} id={'contactUs'}>
           <ContactUs />
         </div>
       </div>
       <div className={'horizontalLine'} />
       <div className={styles.footer}>
-        <Footer />
+        <Footer onQuickLinkClick={(sectionId: string) => handleQuickLinkClick(sectionId)}/>
       </div>
     </>
 

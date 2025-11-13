@@ -1,4 +1,3 @@
-'use client'
 import styles from './NavigationBar.module.scss';
 import Image from "next/image";
 import {NavigationBarItems} from "@/objects/objects";
@@ -7,9 +6,10 @@ import {useAuth} from "@/contexts/authContext";
 
 type Props = {
   shrunk: boolean;
+  onQuickLinkClick: (sectionId: string) => void;
 }
 
-export default function NavigationBar({ shrunk }: Props) {
+export default function NavigationBar({ shrunk, onQuickLinkClick }: Props) {
 
   const { user, logout } = useAuth();
   const navigationBarElements = useMemo(() => {
@@ -21,7 +21,9 @@ export default function NavigationBar({ shrunk }: Props) {
   const handleClick = async (item: { name: string, label: string }) => {
     if (item.name === 'logout') {
       await logout();
+      return;
     }
+    onQuickLinkClick(item.name);
   }
 
   return (

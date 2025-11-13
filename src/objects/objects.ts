@@ -4,23 +4,19 @@ export const NavigationBarItems = [
     label: 'About',
   },
   {
-    name: 'product-solution',
+    name: 'productSolution',
     label: 'Product Solution',
   },
   {
-    name: 'regulatory-compliance',
+    name: 'regulatoryCompliance',
     label: 'Regulatory Compliance',
   },
   {
-    name: 'blog',
+    name: 'blogs',
     label: 'Blogs',
   },
   {
-    name: 'help',
-    label: 'Help',
-  },
-  {
-    name: 'contact-us',
+    name: 'contactUs',
     label: 'Contact Us',
   },
   {
@@ -332,23 +328,19 @@ export const FooterItems = [
         label: 'About'
       },
       {
-        name: 'product-solutions',
+        name: 'productSolution',
         label: 'Product Solutions'
       },
       {
-        name: 'regulatory-compliance',
+        name: 'regulatoryCompliance',
         label: 'Regulatory Compliance'
       },
       {
-        name: 'blog',
+        name: 'blogs',
         label: 'Blogs',
       },
       {
-        name: 'help',
-        label: 'Help'
-      },
-      {
-        name: 'contact-us',
+        name: 'contactUs',
         label: 'Contact Us'
       },
     ]

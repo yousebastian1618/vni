@@ -4,8 +4,27 @@ import styles from './ProductSolution.module.scss';
 import {ProductSolutionItems} from "@/objects/objects";
 import ProductSolutionItem from "@/app/(home)/_pageComponents/ProductSolution/_components/ProductSolutionItem/ProductSolutionItem";
 import Image from "next/image";
+import {useEffect, useRef} from "react";
 
 export default function ProductSolution() {
+
+  const refs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    refs.current.forEach((el) => {
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            el.classList.add(styles.fadeInStyle);
+          }
+        },
+        {threshold: 0.3}
+      );
+      observer.observe(el);
+    })
+  }, []);
+
   return (
     <div className={styles.productSolutionContainer}>
       <div className={styles.title}>
@@ -19,7 +38,9 @@ export default function ProductSolution() {
       <div className={styles.productSolutionItemsContainer}>
         {ProductSolutionItems.map((item, index) => {
           return (
-            <div key={index}>
+            <div key={index} className={styles.productSolution} ref={(el: HTMLDivElement | null) => {
+              refs.current[index] = el;
+            }}>
               <ProductSolutionItem item={item} />
               {index !== ProductSolutionItems.length - 1 ?
                 (
