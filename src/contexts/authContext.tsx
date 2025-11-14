@@ -23,7 +23,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const checkAuth = async () => {
     const res = await apiGET('/auth/check-auth/');
-    setUser(res.data);
+    setUser(res);
   };
   const login = async (requestObj: Record<string, string>) => {
     const res = await apiPOST('/auth/login/', requestObj);

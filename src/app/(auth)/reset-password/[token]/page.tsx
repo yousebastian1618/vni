@@ -8,10 +8,10 @@ export default async function ResetPassword({ params }: { params: Promise<{ toke
   const { apiGET } = useApiAction();
 
   const p = await params;
-  const res = await apiGET('/api/v1/auth/check-token', {
+  const res = await apiGET('/auth/check-token', {
     token: p.token
   });
-  if (res.status !== 200) {
+  if (!res) {
     redirect('/login');
   }
 

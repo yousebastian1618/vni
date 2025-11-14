@@ -45,3 +45,28 @@ export const ResetPasswordButton: Button[] = [
     crudType: 'POST'
   }
 ]
+
+export const BackButton: Button = {
+  name: 'back',
+  label: 'back',
+  function: 'crud',
+  crudType: 'POST'
+}
+
+export const AdminProductsButtons: Button[] = [
+  {
+    name: 'add|products',
+    label: 'ADD +',
+    function: 'func',
+  },
+  {
+    name: 'select|products',
+    label: 'SELECT',
+    function: 'func',
+  },
+  {
+    name: 'sort|products',
+    label: 'SORT',
+    function: 'func',
+  }
+]

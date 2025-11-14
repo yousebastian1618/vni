@@ -80,6 +80,9 @@ body {
   border-radius: 1ex;
   cursor: pointer;
   font-weight: bold;
+  display: flex;
+  align-content: center;
+  gap: 1ex;
   &:hover {
     background-color: var(--main-color-hovering);
   }

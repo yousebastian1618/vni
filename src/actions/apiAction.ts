@@ -12,14 +12,9 @@ export function useApiAction() {
     try {
       const res = await fetch(api, {
         method: "GET",
-        headers: { "Content-Type": "application/json" }
+        headers: { "Content-Type": "application/json" },
       })
-      const response = await res.json();
-      const status = res.status;
-      return {
-        status: status,
-        data: response
-      }
+      return await res.json();
     } finally {
       decrement();
     }

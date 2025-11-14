@@ -1,0 +1,36 @@
+.container {
+  padding: 1rex;
+  border-radius: 1rex;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
+  .imageContainer {
+    position: relative;
+    max-width: 25rem;
+    aspect-ratio: 1;
+    .image {
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+  }
+  .blogInfo {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    .blogTitle {
+      font-weight: bold;
+      letter-spacing: 0.5rex;
+      line-height: 3rem;
+    }
+    .blogAuthor {
+      text-align: right;
+      font-weight: bold;
+      font-size: 0.8rem;
+      width: 90%;
+      margin: auto;
+    }
+  }
+}

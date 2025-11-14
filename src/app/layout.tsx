@@ -4,6 +4,7 @@ import "./globals.css";
 import {LoadingProvider} from "@/contexts/loadingContext";
 import AppShell from "@/app/AppShell";
 import {AuthProvider} from "@/contexts/authContext";
+import {ModalProvider} from "@/contexts/modalContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,11 +41,13 @@ export default async function RootLayout({
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <LoadingProvider>
-          <AuthProvider>
-            <AppShell>
-              {children}
-            </AppShell>
-          </AuthProvider>
+          <ModalProvider>
+            <AuthProvider>
+              <AppShell>
+                {children}
+              </AppShell>
+            </AuthProvider>
+          </ModalProvider>
         </LoadingProvider>
       </body>
     </html>

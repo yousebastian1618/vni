@@ -1,23 +1,29 @@
 'use client'
-import {useApiAction} from "@/actions/apiAction";
 import styles from "@/app/(home)/_pageComponents/Products/Products.module.scss";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import Icon from "@/components/Icon/Icon";
 import Image from "next/image";
 import {useEffect, useMemo, useState} from "react";
+import {useProducts} from "@/react-query/useProducts";
+import {useModal} from "@/contexts/modalContext";
+import {AdminProductsButtons} from "@/objects/buttons";
 
 export default function Products() {
 
+  const { products } = useProducts();
+  const { openModal } = useModal();
+
+  const items = products ?? [];
+
   const [pageSize, setPageSize] = useState(10);
   const [currentPage, setCurrentPage] = useState(0);
-  const [items, setItems] = useState([]);
+
   const totalPages = Math.max(0, Math.ceil(items.length / pageSize) - 1);
   const pageItems = useMemo(
     () => items.slice(currentPage * pageSize, currentPage * pageSize + pageSize),
     [items, pageSize, currentPage]
   );
 
-  const { apiGET } = useApiAction();
 
   useEffect(() => {
     const updatePageSize = () => {
@@ -31,12 +37,15 @@ export default function Products() {
     return () => window.removeEventListener('resize', updatePageSize);
   }, []);
 
-  useEffect(() => {
-    (async () => {
-      const res = await apiGET('/products');
-      setItems(res.data ?? []);
-    })()
-  }, []);
+  const viewProductDetail = (item: { key: string, url: string }) => {
+    openModal(
+      'products',
+      'Sample Products',
+      item,
+      AdminProductsButtons,
+      products
+    )
+  }
 
   return (
     <div className={styles.container}>
@@ -48,7 +57,7 @@ export default function Products() {
         <div className={styles.products}>
           {pageItems.map((item: { key: string, url: string}, i: number) => {
             return (
-              <div key={i} className={styles.imageContainer}>
+              <div key={i} className={styles.imageContainer} onClick={() => viewProductDetail(item)}>
                 <Image
                   className={styles.image}
                   src={item.url}

@@ -16,7 +16,7 @@ export type InputElement = {
 export type Button = {
   name: string;
   label: string;
-  function: 'navigation' | 'crud';
+  function: 'navigation' | 'crud' | 'func';
   color?: string;
   hoveringColor?: string;
   route?: string;
@@ -27,4 +27,19 @@ export type Button = {
 export type User = {
   id: string;
   email: string;
+}
+
+export type Blog = {
+  id: string;
+  title: string;
+  author: string;
+  blogThumbnail: string;
+  created: Date,
+  paragraphs: BlogParagraph[];
+}
+
+export type BlogParagraph = {
+  paragraphTitle: string;
+  paragraph: string;
+  thumbnail: string;
 }

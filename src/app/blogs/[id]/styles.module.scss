@@ -1,0 +1,29 @@
+.container {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 0;
+  .backButton {
+    position: absolute;
+    left: 2%;
+    padding: 1rex 2rem;
+  }
+  .blogTitle {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+
+  }
+  .imageContainer {
+    width: 100%;
+    margin: auto;
+    aspect-ratio: 8/5;
+    position: relative;
+    .image {
+      object-fit: fill;
+      box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    }
+  }
+}

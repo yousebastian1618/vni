@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  .paragraphTitle {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  .thumbnailContainer {
+    position: relative;
+    aspect-ratio: 8/5;
+    width: 100%;
+    margin: auto;
+    .thumbnail {
+      object-fit: contain;
+      box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    }
+  }
+  .paragraph {
+    text-align: justify;
+  }
+}

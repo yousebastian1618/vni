@@ -1,0 +1,13 @@
+.blogsContainer {
+  .blogs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: start;
+    gap: 1rem;
+    width: 60%;
+    margin: 5rem auto;
+    .blog {
+
+    }
+  }
+}
