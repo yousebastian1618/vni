@@ -1,24 +1,35 @@
 'use client'
-import {Button, InputElement} from "@/types/types";
+import {Button} from "@/types/types";
 import {formToObject} from "@/lib/helper";
 import {useAuth} from "@/contexts/authContext";
 import {useRouter} from "next/navigation";
-
+import {useApiAction} from "@/actions/apiAction";
 
 export function useHandleClickAction() {
   const router = useRouter();
   const { login } = useAuth();
+  const { apiPOST, apiPUT, apiDELETE } = useApiAction();
 
-  return async function handleClickAction(button: Button, form?: InputElement[]) {
-    const { function: fn, name } = button;
-    if (fn === 'crud') {
+  return async function handleClickAction(button: Button, elements?: any) {
+    const { func, name } = button;
+    console.log(func, name);
+    if (func === 'crud') {
       if (name === 'login') {
-        const requestObj = formToObject(form ?? []);
+        const requestObj = formToObject(elements ?? []);
         const res = await login(requestObj);
         if (res) {
           router.push('/');
         }
+      } else if (name === 'add|products') {
+        await apiPOST('/products', elements);
       }
+      else if (name === 'update|products') {
+        await apiPUT('/products', elements);
+      } else if (name === 'delete|products') {
+        await apiDELETE('/products', elements);
+      }
+    } else if (func === 'navigation') {
+      console.log('hello');
     }
   }
 }

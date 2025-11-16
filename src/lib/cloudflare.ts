@@ -4,7 +4,7 @@ import {
   ListObjectsV2Command,
   GetObjectCommand,
   PutObjectCommand,
-  DeleteObjectCommand,
+  DeleteObjectsCommand,
   HeadObjectCommand
 } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
@@ -57,10 +57,13 @@ export async function putObject(
   return cfClient.send(cmd);
 }
 
-export async function deleteObject(key: string) {
-  const cmd = new DeleteObjectCommand({
+export async function deleteObjects(keys: string[]) {
+  if (keys.length === 0) return;
+  const cmd = new DeleteObjectsCommand({
     Bucket: BUCKET,
-    Key: key
+    Delete: {
+      Objects: keys.map((key) => ({ Key: key }))
+    }
   });
   return cfClient.send(cmd);
 }

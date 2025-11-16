@@ -69,7 +69,7 @@ body {
   padding: 1.5rex 3rex;
 }
 .horizontalLine {
-  border-top: 0.1px solid black;
+  border-top: 1px solid black;
 }
 .modifiedButtonStyle {
   box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;

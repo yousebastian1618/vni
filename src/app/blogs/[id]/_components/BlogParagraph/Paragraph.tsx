@@ -1,7 +1,6 @@
 import styles from './styles.module.scss';
 import type { BlogParagraph } from "@/types/types";
 import Image from "next/image";
-import Icon from "@/components/Icon/Icon";
 
 type Props = {
   paragraph: BlogParagraph

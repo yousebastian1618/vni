@@ -1,14 +1,13 @@
 import styles from './styles.module.scss';
 import {useModal} from "@/contexts/modalContext";
 import Icon from "@/components/Icon/Icon";
-import Button from "@/components/Button/Button";
 import Image from "next/image";
 import {useEffect, useState} from "react";
 import {useAuth} from "@/contexts/authContext";
 
 export default function Modal() {
 
-  const { modalType, modalTitle, modalButtons, modalList, modalMain, closeModal, selectModalMain } = useModal();
+  const { modalType, modalTitle, modalList, modalMain, closeModal, selectModalMain } = useModal();
   const { user } = useAuth();
 
   const pageSize = 5;
@@ -53,17 +52,6 @@ export default function Modal() {
       </span>
       {modalType === 'products' && (
         <>
-          {user && (
-            <div className={styles.modalButtons}>
-              {modalButtons.map((button, index) => {
-                return (
-                  <div key={index}>
-                    <Button button={button} />
-                  </div>
-                )
-              })}
-            </div>
-          )}
           <div className={styles.modalTitle}>
             {modalTitle}
           </div>

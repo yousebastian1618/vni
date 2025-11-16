@@ -1,12 +1,11 @@
 import useSWR from 'swr';
 import { useApiAction } from "@/actions/apiAction";
-
-type Product = { key: string; url: string };
+import {Product} from "@/types/types";
 
 export function useProducts() {
   const { apiGET } = useApiAction();
 
-  const { data, error, isLoading } = useSWR<Product[]>(
+  const { data, error, isLoading, mutate } = useSWR<Product[]>(
     '/products',
     (url) => apiGET(url),   // returns the array directly
     {
@@ -20,5 +19,6 @@ export function useProducts() {
     products: data,
     error,
     isLoading,
+    mutateProducts: mutate
   };
 }

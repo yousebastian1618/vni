@@ -19,14 +19,15 @@ export function useApiAction() {
       decrement();
     }
   }
-  const apiPOST = async (url: string, payload?: Record<string, string>) => {
+  const apiPOST = async (url: string, payload?: any) => {
     const api = `${process.env.NEXT_PUBLIC_BASE_URL}${process.env.NEXT_PUBLIC_BASE_API_VERSION}${url}`;
     increment();
     try {
+      const isFormData = payload instanceof FormData;
       const response = await fetch(api, {
         method: 'POST',
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
+        headers: isFormData ? undefined :{ "Content-Type": "application/json" },
+        body: isFormData ? payload : JSON.stringify(payload)
       });
       const res = await response.json();
       const status = response.status;
@@ -38,6 +39,33 @@ export function useApiAction() {
       decrement();
     }
   }
+  const apiPUT = async (url: string, payload?: any) => {
+    const api = `${process.env.NEXT_PUBLIC_BASE_URL}${process.env.NEXT_PUBLIC_BASE_API_VERSION}${url}`;
+    increment();
+    try {
+      const response = await fetch(api, {
+        method: 'PUT',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      })
+      return await response.json();
+    } finally {
+      decrement();
+    }
+  }
+  const apiDELETE = async (url: string, payload?: any) => {
+    const api = `${process.env.NEXT_PUBLIC_BASE_URL}${process.env.NEXT_PUBLIC_BASE_API_VERSION}${url}`;
+    increment();
+    try {
+      const params: any[] = payload;
+      await fetch(api, {
+        method: 'DELETE',
+        body: JSON.stringify(params)
+      })
+    } finally {
+      decrement();
+    }
+  }
 
-  return { apiGET, apiPOST}
+  return { apiGET, apiPOST, apiPUT, apiDELETE }
 }

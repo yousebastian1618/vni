@@ -1,4 +1,9 @@
 .blogsContainer {
+  .adminButtons {
+    display: flex;
+    gap: 1ex;
+    margin: 1rex;
+  }
   .blogs {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

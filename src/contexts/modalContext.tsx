@@ -6,17 +6,17 @@ type Ctx = {
   modalOpen: boolean;
   modalTitle: string;
   modalType: string;
-  modalMain: Record<string, string>,
-  modalList?: Record<string, string>[],
+  modalMain: Record<string, any>,
+  modalList?: Record<string, any>[],
   modalButtons: Button[];
   openModal: (
     modalType: string,
     modalTitle: string,
-    modalMain: Record<string, string>,
+    modalMain: Record<string, any>,
     modalButtons: Button[],
-    modalList?: Record<string, string>[],
+    modalList?: Record<string, any>[],
   ) => void;
-  selectModalMain: (modalMain: Record<string, string>) => void;
+  selectModalMain: (modalMain: Record<string, any>) => void;
   closeModal: () => void;
 }
 
@@ -29,11 +29,11 @@ const modalCtx = createContext<Ctx>({
   openModal: (
     _modalType: string,
     _modalTitle: string,
-    _modalMain: Record<string, string>,
+    _modalMain: Record<string, any>,
     _modalButtons: Button[],
-    _modalList?: Record<string, string>[],
+    _modalList?: Record<string, any>[],
   ) => {},
-  selectModalMain: (_modalMain: Record<string, string>) => {},
+  selectModalMain: (_modalMain: Record<string, any>) => {},
   closeModal: () => {}
 });
 
@@ -42,7 +42,7 @@ export function ModalProvider({ children }: { children: React.ReactNode }) {
   const [modalTitle, setModalTitle] = useState('');
   const [modalType, setModalType] = useState('');
   const [modalMain, setModalMain] = useState({});
-  const [modalList, setModalList] = useState<Record<string, string>[]>([]);
+  const [modalList, setModalList] = useState<Record<string, any>[]>([]);
   const [modalButtons, setModalButtons] = useState<Button[]>([]);
   const value = useMemo(
     () => ({
@@ -52,7 +52,7 @@ export function ModalProvider({ children }: { children: React.ReactNode }) {
       modalMain,
       modalList,
       modalButtons,
-      openModal: (modalType: string, modalTitle: string, modalMain: Record<string, string>, modalButtons: Button[], modalList?: Record<string, string>[]) => {
+      openModal: (modalType: string, modalTitle: string, modalMain: Record<string, any>, modalButtons: Button[], modalList?: Record<string, string>[]) => {
         setModalOpen(true);
         setModalTitle(modalTitle);
         setModalType(modalType);
@@ -62,7 +62,7 @@ export function ModalProvider({ children }: { children: React.ReactNode }) {
         }
         setModalButtons(modalButtons);
       },
-      selectModalMain: (modalMain: Record<string, string>) => {
+      selectModalMain: (modalMain: Record<string, any>) => {
         setModalMain(modalMain);
       },
       closeModal: () => {

@@ -4,7 +4,7 @@ export const ContactUsButton: Button[] = [
   {
     name: 'submit|inquiry',
     label: 'Submit',
-    function: 'crud',
+    func: 'crud',
     crudType: 'POST'
   }
 ]
@@ -13,7 +13,7 @@ export const LoginButtons: Button[] = [
   {
     name: 'login',
     label: 'Login',
-    function: 'crud',
+    func: 'crud',
     crudType: 'POST',
     keyDown: 'enter'
   }
@@ -23,7 +23,7 @@ export const RegisterButton: Button[] = [
   {
     name: 'signup',
     label: 'Sign Up',
-    function: 'crud',
+    func: 'crud',
     crudType: 'POST',
   }
 ]
@@ -32,7 +32,7 @@ export const ForgotPasswordButton: Button[] = [
   {
     name: 'submit|forgot-password',
     label: 'Submit',
-    function: 'crud',
+    func: 'crud',
     crudType: 'POST'
   }
 ]
@@ -41,7 +41,7 @@ export const ResetPasswordButton: Button[] = [
   {
     name: 'resetPassword',
     label: 'Reset',
-    function: 'crud',
+    func: 'crud',
     crudType: 'POST'
   }
 ]
@@ -49,7 +49,7 @@ export const ResetPasswordButton: Button[] = [
 export const BackButton: Button = {
   name: 'back',
   label: 'back',
-  function: 'crud',
+  func: 'crud',
   crudType: 'POST'
 }
 
@@ -57,16 +57,70 @@ export const AdminProductsButtons: Button[] = [
   {
     name: 'add|products',
     label: 'ADD +',
-    function: 'func',
+    func: 'navigation',
   },
   {
     name: 'select|products',
     label: 'SELECT',
-    function: 'func',
+    func: 'navigation',
   },
   {
     name: 'sort|products',
     label: 'SORT',
-    function: 'func',
+    func: 'navigation',
+  }
+]
+
+export const AdminProductsCrudButtons: Button[] = [
+  {
+    name: 'update|products',
+    label: 'UPDATE',
+    func: 'crud',
+  },
+  {
+    name: 'delete|products',
+    label: 'DELETE',
+    func: 'crud',
+  },
+  {
+    name: 'cancel',
+    label: 'CANCEL',
+    func: 'navigation',
+  }
+]
+
+export const AdminBlogsButtons: Button[] = [
+  {
+    name: 'add|blogs',
+    label: 'ADD +',
+    func: 'navigation',
+  },
+  {
+    name: 'select|blogs',
+    label: 'SELECT',
+    func: 'navigation',
+  },
+  {
+    name: 'sort|blogs',
+    label: 'SORT',
+    func: 'navigation',
+  }
+]
+
+export const AdminBlogsCrudButtons: Button[] = [
+  {
+    name: 'update|blogs',
+    label: 'UPDATE',
+    func: 'crud',
+  },
+  {
+    name: 'delete|blogs',
+    label: 'DELETE',
+    func: 'crud',
+  },
+  {
+    name: 'cancel',
+    label: 'CANCEL',
+    func: 'navigation',
   }
 ]

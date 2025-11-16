@@ -13,7 +13,6 @@ export default function Footer({ onQuickLinkClick }: Props) {
     onQuickLinkClick(sectionId);
   }
 
-
   return (
     <div className={styles.footerContainer}>
       <div className={styles.left}>
