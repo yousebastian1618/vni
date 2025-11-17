@@ -4,7 +4,7 @@ import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import Icon from "@/components/Icon/Icon";
 import Image from "next/image";
 import React, {useEffect, useMemo, useRef, useState} from "react";
-import {useProducts} from "@/react-query/useProducts";
+import {useProducts} from "@/hooks/useProducts";
 import {useModal} from "@/contexts/modalContext";
 import {AdminProductsButtons, AdminProductsCrudButtons} from "@/objects/buttons";
 import Button from "@/components/Button/Button";
@@ -35,6 +35,7 @@ export default function Products() {
       const sorted = [...products].sort((a, b) => a.index - b.index);
       setItems(sorted);
     }
+    console.log(products);
   }, [products]);
 
   const totalPages = Math.max(0, Math.ceil(items.length / pageSize) - 1);
