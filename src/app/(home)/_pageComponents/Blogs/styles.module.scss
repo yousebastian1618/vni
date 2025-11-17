@@ -12,7 +12,19 @@
     width: 60%;
     margin: 5rem auto;
     .blog {
-
+      position: relative;
+      .index {
+        position: absolute;
+        left: 4%;
+        top: 3.5%;
+        padding: 0.5rex 1rex;
+        font-weight: bold;
+        background: white;
+        color: var(--main-color);
+        z-index: 1;
+        border-radius: 1rex;
+        font-size: 1.2rem;
+      }
     }
   }
 }

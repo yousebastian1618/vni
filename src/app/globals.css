@@ -83,6 +83,7 @@ body {
   display: flex;
   align-content: center;
   gap: 1ex;
+  border: 1px solid var(--main-color);
   &:hover {
     background-color: var(--main-color-hovering);
   }

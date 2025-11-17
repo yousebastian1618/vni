@@ -233,3 +233,88 @@ export const ResetPasswordForm: InputElement[] = [
     }
   }
 ]
+
+export const AddBlogForms: InputElement[] = [
+  {
+    name: 'title',
+    label: 'Title',
+    type: 'text',
+    value: '',
+    required: true,
+    error: false,
+    errorMessage: '',
+    checkErrors: {
+      "NOT_EMPTY": {
+        criteria: "",
+        message: "Title cannot be empty"
+      }
+    }
+  },
+  {
+    name: 'author',
+    label: 'Author',
+    type: 'text',
+    value: '',
+    required: false,
+    error: false,
+    errorMessage: '',
+    checkErrors: {
+    }
+  },
+  {
+    name: 'mainThumbnail',
+    label: 'Main Thumbnail',
+    type: 'file',
+    value: '',
+    required: false,
+    error: false,
+    errorMessage: '',
+    checkErrors: {
+    }
+  },
+]
+
+export const AddBlogParagraphForm: InputElement[] = [
+  {
+    name: 'paragraphThumbnail',
+    label: 'Paragraph Thumbnail',
+    type: 'file',
+    value: '',
+    required: false,
+    error: false,
+    errorMessage: '',
+    checkErrors: {
+    }
+  },
+  {
+    name: 'paragraphTitle',
+    label: 'Paragraph Title',
+    type: 'text',
+    value: '',
+    required: true,
+    error: false,
+    errorMessage: '',
+    checkErrors: {
+      "NOT_EMPTY": {
+        criteria: "",
+        message: "Paragraph Title cannot be empty"
+      }
+    }
+  },
+  {
+    name: 'paragraph',
+    label: 'Paragraph',
+    type: 'textarea',
+    value: '',
+    required: true,
+    error: false,
+    errorMessage: '',
+    checkErrors: {
+      "NOT_EMPTY": {
+        criteria: "",
+        message: "Paragraph Title cannot be empty"
+      }
+    }
+  },
+
+]

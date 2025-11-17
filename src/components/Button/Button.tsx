@@ -19,6 +19,7 @@ export default function Button({ button, handleButtonClick }: Props) {
     <button
       type={"button"}
       className={'modifiedButtonStyle'}
+      style={{'background': button.backgroundColor ?? '', 'color': button.color ?? ''}}
       onClick={() => handleClick()}
     >
       {button.label}

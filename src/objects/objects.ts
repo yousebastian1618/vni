@@ -759,12 +759,14 @@ export const IconMap: any = {
 export const MyBlogs: Blog[] = [
   {
     id: 'id1',
+    index: 0,
     title: 'Harvard Gazette',
     author: 'author1',
     blogThumbnail: '/faq.png',
     created: new Date(2025, 10, 31),
     paragraphs: [
       {
+        index: 0,
         paragraphTitle: 'This is first BlogParagraph',
         paragraph: 'Harvard University’s news site gives out a sense of prestige and integrity with its contemporary design, muted cream palette, and minimal animation effects. The available space is well-organized, showcasing featured posts, news, and events without overcrowding.\n' +
           '\n' +
@@ -777,12 +779,14 @@ export const MyBlogs: Blog[] = [
   },
   {
     id: 'id2',
+    index: 1,
     title: 'Ladybird Education',
     author: 'Ultimate Member',
     blogThumbnail: '/contact-us.png',
     created: new Date(2025, 3, 12),
     paragraphs: [
       {
+        index: 0,
         paragraphTitle: 'Ladybird Lah~',
         paragraph: 'Ladybird Education provides books, educational articles, and teaching materials to help children learn English. Since the target audiences are parents and children, the design is simple and sweet, with a ladybug-themed color palette. The playful font matches the blog’s fun vibe while staying readable.\n' +
           '\n' +
@@ -795,12 +799,14 @@ export const MyBlogs: Blog[] = [
   },
   {
     id: 'id3',
+    index: 2,
     title: 'TIME',
     author: 'Ad Inserter\n',
     blogThumbnail: '/contact-us.png',
     created: new Date(2025, 2, 11),
     paragraphs: [
       {
+        index: 0,
         paragraphTitle: 'Ladybird aa~',
         paragraph: 'The global media brand TIME shapes its WordPress blog into a robust information hub that features articles about global news. The sections are tucked in a collapsible sidebar menu, keeping the layout clean.\n' +
           '\n' +

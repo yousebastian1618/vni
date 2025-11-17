@@ -124,3 +124,42 @@ export const AdminBlogsCrudButtons: Button[] = [
     func: 'navigation',
   }
 ]
+
+export const AdminBlogsAddButtons: Button[] = [
+  {
+    name: 'addParagraph',
+    label: 'Add Paragraph +',
+    func: 'navigation'
+  }
+]
+
+export const AdminBlogRemovalButton: Button = {
+  name: 'removeParagraph',
+  label: 'Remove Paragraph -',
+  func: 'navigation',
+  color: 'var(--main-color)',
+  backgroundColor: 'white'
+}
+
+export const AdminCrudBlogsButtons: Button[] = [
+  {
+    name: 'preview|blogs',
+    label: 'PREVIEW',
+    func: 'navigation',
+  },
+  {
+    name: 'cancel',
+    label: 'CANCEL',
+    func: 'navigation',
+  },
+  {
+    name: 'goback|blogs',
+    label: 'GO BACK',
+    func: 'navigation',
+  },
+  {
+    name: 'submit|blogs',
+    label: 'SUBMIT',
+    func: 'crud',
+  }
+]

@@ -7,6 +7,7 @@ import {useCallback, useEffect, useReducer} from "react";
 import {formReducer} from "@/components/Form/formReducer";
 import {useHandleClickAction} from "@/actions/clickAction";
 import FormFooter from "@/components/Form/FormFooter/FormFooter";
+import FileInput from "@/components/Form/Inputs/FileInput/FileInput";
 
 type Props = {
   label: string;
@@ -29,11 +30,13 @@ export default function Form({ label, form, buttons }: Props) {
     }))
   );
 
-  useEffect(() => {
-    dispatch({ type: 'reset', initial: form });
-  }, [form])
+  // useEffect(() => {
+  //   return () => {
+  //     dispatch({ type: 'reset', initial: form });
+  //   }
+  // }, [])
 
-  const setValue = useCallback((name: string, value: string) => {
+  const setValue = useCallback((name: string, value: string | File | null) => {
     dispatch({ type: 'set_value', name, value})
   }, []);
 
@@ -49,6 +52,11 @@ export default function Form({ label, form, buttons }: Props) {
     <>
       <form className={styles.formContainer}>
         {state.map(( formInput: InputElement) => {
+          if (formInput.type === 'file') {
+            return (
+              <FileInput key={formInput.name} inputElement={formInput} onChange={(name, val) => setValue(name, val)} />
+            )
+          }
           return (
             <TextInput
               key={formInput.name}

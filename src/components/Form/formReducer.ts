@@ -1,7 +1,7 @@
 import type { InputElement } from "@/types/types";
 
 export type FormAction =
-  { type: 'set_value'; name: string; value: string } |
+  { type: 'set_value'; name: string; value: string | File | null} |
   { type: 'set_error'; name: string; error: boolean; errorMessage: string } |
   { type: 'reset'; initial: InputElement[] }
 

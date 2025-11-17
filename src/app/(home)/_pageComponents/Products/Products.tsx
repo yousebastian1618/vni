@@ -82,8 +82,7 @@ export default function Products() {
 
   const toggleSelectingProduct = (item: ProductType) => {
     setSelectedProducts((selected) => {
-      const exists = selected.find((i) => i.key === item.key);
-      if (!exists) {
+      if (!itemSelected(item)) {
         return [...selected, item];
       }
       return selected.filter((i) => i.key !== item.key);

@@ -27,6 +27,12 @@ export function useHandleClickAction() {
         await apiPUT('/products', elements);
       } else if (name === 'delete|products') {
         await apiDELETE('/products', elements);
+      } else if (name === 'update|blogs') {
+        console.log('updating blogs');
+        console.log(elements);
+      } else if (name === 'delete|blogs') {
+        console.log('deleting blogs');
+        console.log(elements);
       }
     } else if (func === 'navigation') {
       console.log('hello');
