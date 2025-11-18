@@ -16,7 +16,7 @@ export default function ContactUs() {
              dangerouslySetInnerHTML={{ __html: ContactUsMessage }}
           >
           </p>
-          <Form label={'CONTACT US'} form={ContactUsForm} buttons={ContactUsButton} />
+          <Form label='CONTACT_US' form={ContactUsForm} buttons={ContactUsButton} />
         </div>
         <div className={styles.imageContainer}>
           <Image

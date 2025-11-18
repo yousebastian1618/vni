@@ -12,7 +12,6 @@ export function useHandleClickAction() {
 
   return async function handleClickAction(button: Button, elements?: any) {
     const { func, name } = button;
-    console.log(func, name);
     if (func === 'crud') {
       if (name === 'login') {
         const requestObj = formToObject(elements ?? []);
@@ -27,15 +26,19 @@ export function useHandleClickAction() {
         await apiPUT('/products', elements);
       } else if (name === 'delete|products') {
         await apiDELETE('/products', elements);
+      } else if (name === 'submit|blogs') {
+        const { blog, paragraphs } = elements;
+        await apiPOST('/blogs', elements);
+        await apiPOST('/blog-thumbnails', blog[1]);
+        for (const paragraph of paragraphs) {
+          await apiPOST('/blog-thumbnails', paragraph[1]);
+        }
       } else if (name === 'update|blogs') {
-        console.log('updating blogs');
-        console.log(elements);
+
       } else if (name === 'delete|blogs') {
-        console.log('deleting blogs');
-        console.log(elements);
+
       }
     } else if (func === 'navigation') {
-      console.log('hello');
     }
   }
 }

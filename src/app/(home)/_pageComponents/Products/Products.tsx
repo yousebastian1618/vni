@@ -35,7 +35,6 @@ export default function Products() {
       const sorted = [...products].sort((a, b) => a.index - b.index);
       setItems(sorted);
     }
-    console.log(products);
   }, [products]);
 
   const totalPages = Math.max(0, Math.ceil(items.length / pageSize) - 1);

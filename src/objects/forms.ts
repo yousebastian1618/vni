@@ -316,5 +316,4 @@ export const AddBlogParagraphForm: InputElement[] = [
       }
     }
   },
-
 ]

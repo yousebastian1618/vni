@@ -1,6 +1,5 @@
 import bcrypt from 'bcryptjs';
 import {InputElement} from "@/types/types";
-import {apiPOST} from "@/actions/apiAction";
 
 export async function hashPassword(plain: string) {
   const salt = await bcrypt.genSalt(10);

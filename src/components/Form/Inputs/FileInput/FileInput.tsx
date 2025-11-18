@@ -3,8 +3,7 @@ import type {InputElement} from "@/types/types";
 import React, {useCallback, useMemo, useRef} from "react";
 import Image from "next/image";
 import Icon from "@/components/Icon/Icon";
-//
-//
+
 type Props = {
   inputElement: InputElement;
   onChange: (name: string, value: File | null) => void;
