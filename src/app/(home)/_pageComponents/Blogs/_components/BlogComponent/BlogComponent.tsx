@@ -25,7 +25,7 @@ export default function BlogComponent({ blog, user }: Props) {
       <div className={styles.imageContainer}>
         <Image
           className={styles.image}
-          src={blog.blogThumbnail}
+          src={blog.thumbnail}
           alt={blog.title}
           fill
           draggable={false}

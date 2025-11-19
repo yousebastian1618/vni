@@ -12,7 +12,7 @@ export async function GET() {
   const products = allProducts.map((product) => {
     return {
       key: product.id,
-      url: `/api/v1/product?key=${encodeURIComponent('products/' + product.id)}`,
+      url: `/api/v1/thumbnail?key=${encodeURIComponent('products/' + product.id)}`,
       index: product.index
     }
   })

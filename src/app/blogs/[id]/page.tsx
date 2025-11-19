@@ -1,28 +1,33 @@
 'use client'
 import styles from './styles.module.scss';
 import {useEffect, useState} from "react";
-import {MyBlogs} from "@/objects/objects";
 import Image from "next/image";
 import BlogParagraph from "@/app/blogs/[id]/_components/BlogParagraph/Paragraph";
 import Icon from "@/components/Icon/Icon";
 import Link from "next/link";
 import { useRouter, useParams } from "next/navigation";
 import type {Blog} from "@/types/types";
+import {useBlogs} from "@/hooks/useBlogs";
 
 export default function BlogDetail() {
+
+  const { blogs } = useBlogs();
+
   const router = useRouter();
   const params = useParams();
   const blogId = params.id;
   const [blog, setBlog] = useState<Blog | null>(null);
 
   useEffect(() => {
-    const currentBlog = MyBlogs.find((b) => b.id === blogId);
-    if (!currentBlog) {
-      router.push('/');
-      return;
+    if (blogs) {
+      const currentBlog = blogs.find((b) => b.id === blogId);
+      if (!currentBlog) {
+        router.push('/');
+        return;
+      }
+      setBlog(currentBlog);
     }
-    setBlog(currentBlog);
-  }, [blogId]);
+  }, [blogs]);
 
   return (
     <div className={styles.container}>
@@ -37,11 +42,14 @@ export default function BlogDetail() {
       <div className={styles.blogTitle}>
         {blog?.title}
       </div>
-      {blog && blog.blogThumbnail !== '' && (
+      <div className={styles.author}>
+        {blog?.author}
+      </div>
+      {blog && blog.thumbnail !== '' && (
         <div className={styles.imageContainer}>
           <Image
             className={styles.image}
-            src={blog.blogThumbnail}
+            src={blog.thumbnail}
             alt={blog.title}
             fill
             draggable={false}

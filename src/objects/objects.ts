@@ -1,5 +1,3 @@
-import {Blog} from "@/types/types";
-
 export const NavigationBarItems = [
   {
     name: 'about',
@@ -755,66 +753,3 @@ export const IconMap: any = {
     icon: 'fi fi-rr-settings-sliders'
   }
 }
-
-export const MyBlogs: Blog[] = [
-  {
-    id: 'id1',
-    index: 0,
-    title: 'Harvard Gazette',
-    author: 'author1',
-    blogThumbnail: '/faq.png',
-    created: new Date(2025, 10, 31),
-    paragraphs: [
-      {
-        index: 0,
-        paragraphTitle: 'This is first BlogParagraph',
-        paragraph: 'Harvard University’s news site gives out a sense of prestige and integrity with its contemporary design, muted cream palette, and minimal animation effects. The available space is well-organized, showcasing featured posts, news, and events without overcrowding.\n' +
-          '\n' +
-          'I have a soft spot for websites with sticky navigation that let visitors switch pages without scrolling back up ‒ a handy feature for sites with long posts. The mega menu bar helps keep everything organized and clutter-free.\n' +
-          '\n' +
-          'Visitors can sign up for the newsletter through a button in posts. The placement is a bit more hidden than I’d like, but I doubt educational organizations see growing their email list as a priority.',
-        thumbnail: '/logo.png'
-      }
-    ],
-  },
-  {
-    id: 'id2',
-    index: 1,
-    title: 'Ladybird Education',
-    author: 'Ultimate Member',
-    blogThumbnail: '/contact-us.png',
-    created: new Date(2025, 3, 12),
-    paragraphs: [
-      {
-        index: 0,
-        paragraphTitle: 'Ladybird Lah~',
-        paragraph: 'Ladybird Education provides books, educational articles, and teaching materials to help children learn English. Since the target audiences are parents and children, the design is simple and sweet, with a ladybug-themed color palette. The playful font matches the blog’s fun vibe while staying readable.\n' +
-          '\n' +
-          'The blog uses WordPress’ registration system to manage access to free downloadable materials. You can adapt it to foster your own community and offer exclusive content to site members ‒ a common strategy to make money blogging.\n' +
-          '\n' +
-          'My favorite part is the filters. Just select the appropriate tags, series, age, and reading level from the options and apply them ‒ no typing needed. This approach minimizes the risk of typos and makes the blog kids-friendly.',
-        thumbnail: '/logo.png'
-      }
-    ]
-  },
-  {
-    id: 'id3',
-    index: 2,
-    title: 'TIME',
-    author: 'Ad Inserter\n',
-    blogThumbnail: '/contact-us.png',
-    created: new Date(2025, 2, 11),
-    paragraphs: [
-      {
-        index: 0,
-        paragraphTitle: 'Ladybird aa~',
-        paragraph: 'The global media brand TIME shapes its WordPress blog into a robust information hub that features articles about global news. The sections are tucked in a collapsible sidebar menu, keeping the layout clean.\n' +
-          '\n' +
-          'Trending news takes center stage, accompanied by a large featured image. The most-read articles are highlighted in the section on the right, ranked to grab readers’ interest. There are also Editor’s Picks and Videos sections at the bottom of the page.\n' +
-          '\n' +
-          'TIME generates revenue by offering subscriptions through a popup when you first visit the blog and a call to action in the sticky navigation bar that follows you when scrolling. It also runs ads on several spots across the page (the homepage has three). I wish they were less on the nose, but these methods do draw attention to what the company wants you to see.',
-        thumbnail: '/logo.png'
-      }
-    ]
-  }
-]

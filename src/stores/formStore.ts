@@ -48,8 +48,12 @@ export const useFormStore = create<FormState & FormAction>((set, get) => ({
     const formData = new FormData();
     form.forEach((i: InputElement) => {
       if (i.value instanceof File) {
-        formData.append('key', formName);
-        formData.append('file', i.value);
+        if (formName.includes('Paragraph') || formName.includes('Blog')) {
+          formData.append('key', formName);
+          formData.append('file', i.value);
+          formData.append('location', 'blogs/')
+        }
+
       } else {
         obj[i.name] = i.value;
       }

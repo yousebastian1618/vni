@@ -1,4 +1,9 @@
 .container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 0;
   .blogTitle {
     text-align: center;
     font-size: 2.5rem;
@@ -15,30 +20,33 @@
     aspect-ratio: 8/5;
     position: relative;
     .blogThumbnail {
-      object-fit: contain;
+      object-fit: fill;
+      box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
     }
   }
   .paragraphs {
     .paragraph {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
       .paragraphThumbnailContainer {
-        width: 100%;
-        margin: auto;
-        aspect-ratio: 8/5;
         position: relative;
+        aspect-ratio: 8/5;
+        width: 100%;
+        margin: 1rex auto;
         .paragraphThumbnail {
-          object-fit: contain;
+          object-fit: fill;
           box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
         }
       }
       .paragraphTitle {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        letter-spacing: 0.2rex;
+        font-weight: 600;
+        font-size: 1.5rem;
       }
       .paragraphMessage {
         line-height: 2rem;
-        letter-spacing: 0.2rex;
+        letter-spacing: 0.1rex;
+        text-align: justify;
       }
     }
   }

@@ -1,24 +1,24 @@
 import useSWR from 'swr';
 import { useApiAction } from "@/actions/apiAction";
-import {Product} from "@/types/types";
+import type { Blog } from "@/types/types";
 
-export function useProducts() {
+export function useBlogs() {
   const { apiGET } = useApiAction();
 
-  const { data, error, isLoading, mutate } = useSWR<Product[]>(
-    '/products',
+  const { data, error, isLoading, mutate } = useSWR<Blog[]>(
+    '/blogs',
     (url) => apiGET(url),
     {
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
-      refreshInterval: 0,
+      refreshInterval: 0
     }
   );
 
   return {
-    products: data,
+    blogs: data,
     error,
     isLoading,
-    mutateProducts: mutate
-  };
+    mutateBlogs: mutate
+  }
 }

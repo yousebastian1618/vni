@@ -70,6 +70,7 @@ export default function AddBlogs() {
         'blog': blog,
         'paragraphs': paragraphs
       });
+      router.push('/');
     }
   }
 

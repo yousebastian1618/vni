@@ -10,13 +10,15 @@
     position: relative;
     aspect-ratio: 8/5;
     width: 100%;
-    margin: auto;
+    margin: 1rex auto;
     .thumbnail {
       object-fit: contain;
       box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
     }
   }
   .paragraph {
+    line-height: 2rem;
+    letter-spacing: 0.1rex;
     text-align: justify;
   }
 }

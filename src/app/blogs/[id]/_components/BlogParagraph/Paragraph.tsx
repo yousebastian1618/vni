@@ -11,14 +11,14 @@ export default function BlogParagraph({ paragraph }: Props) {
     <>
       <div className={styles.container}>
         <div className={styles.paragraphTitle}>
-          {paragraph.paragraphTitle}
+          {paragraph.title}
         </div>
         {paragraph.thumbnail !== '' && (
           <div className={styles.thumbnailContainer}>
             <Image
               className={styles.thumbnail}
               src={paragraph.thumbnail}
-              alt={paragraph.paragraphTitle}
+              alt={paragraph.title}
               fill
               draggable={false}
             />

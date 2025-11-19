@@ -1,28 +1,35 @@
 import styles from './styles.module.scss';
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import BlogComponent from "@/app/(home)/_pageComponents/Blogs/_components/BlogComponent/BlogComponent";
-import {MyBlogs} from "@/objects/objects";
 import {AdminBlogsButtons, AdminBlogsCrudButtons} from "@/objects/buttons";
 import Button from "@/components/Button/Button";
 import {useAuth} from "@/contexts/authContext";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
 import type { Button as ButtonType, Blog as BlogType } from '@/types/types';
 import {useHandleClickAction} from "@/actions/clickAction";
+import {useBlogs} from "@/hooks/useBlogs";
 
 export default function Blogs() {
+  const defaultPageSize = 8;
 
+  const { blogs, mutateBlogs } = useBlogs();
   const router = useRouter();
   const { user } = useAuth();
   const handleClickAction = useHandleClickAction();
 
-
+  const [items, setItems] = useState<BlogType[]>([]);
   const [selecting, setSelecting] = useState(false);
   const [sorting, setSorting] = useState(false);
   const [selectedBlogs, setSelectedBlogs] = useState<BlogType[]>([]);
   const [sortedBlogs, setSortedBlogs] = useState<BlogType[]>([]);
 
-  const blogs = MyBlogs;
+  useEffect(() => {
+    if (blogs) {
+      const sorted = [...blogs].sort((a, b) => a.index - b.index);
+      setItems(sorted);
+    }
+  }, [blogs]);
 
   const toggleAdminBlogButtons = () => {
     if (selecting) {
@@ -95,7 +102,7 @@ export default function Blogs() {
         })}
       </div>
       <div className={styles.blogs}>
-        {blogs.map((blog, i) => {
+        {items.map((blog, i) => {
           return (
             <div key={blog.id}
                  className={`${styles.blog} ${selecting && !blogSelected(blog) ? 'opacity-40' : 'opacity-100'}`}

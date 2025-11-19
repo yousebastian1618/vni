@@ -24,20 +24,20 @@ model Product {
 model Blog {
   id         String          @id @default(uuid())
   title      String
-  subtitle   String
   author     String
   index      Int             @default(0)
+  thumbnail  String?
   createdAt  DateTime        @default(now())
   updatedAt  DateTime        @updatedAt
   paragraphs BlogParagraph[]
 }
 
 model BlogParagraph {
-  id     String @id @default(uuid())
-  blogId String
-  title  String
-  text   String
-  image  String
-  index  Int    @default(0)
-  blog   Blog   @relation(fields: [blogId], references: [id], onDelete: Cascade)
+  id        String  @id @default(uuid())
+  blogId    String
+  title     String
+  paragraph String
+  thumbnail String?
+  index     Int     @default(0)
+  blog      Blog    @relation(fields: [blogId], references: [id], onDelete: Cascade)
 }

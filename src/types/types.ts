@@ -41,13 +41,13 @@ export type Blog = {
   index: number;
   title: string;
   author: string;
-  blogThumbnail: string;
+  thumbnail: string;
   created: Date,
   paragraphs: BlogParagraph[];
 }
 
 export type BlogParagraph = {
-  paragraphTitle: string;
+  title: string;
   paragraph: string;
   thumbnail: string;
   index: number;
