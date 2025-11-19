@@ -28,17 +28,17 @@ export function useHandleClickAction() {
         await apiDELETE('/products', elements);
       } else if (name === 'submit|blogs') {
         const { blog, paragraphs } = elements;
-        const blogThumbnail= await apiPOST('/thumbnails', blog[1]);
+        const blogThumbnail= await apiPOST('/thumbnail', blog[1]);
         blog[0]['thumbnail'] = await blogThumbnail.data.id;
         for (const paragraph of paragraphs) {
-          const paragraphThumbnailId = await apiPOST('/thumbnails', paragraph[1]);
+          const paragraphThumbnailId = await apiPOST('/thumbnail', paragraph[1]);
           paragraph[0]['thumbnail'] = await paragraphThumbnailId.data.id;
         }
         await apiPOST('/blogs', { blog, paragraphs });
       } else if (name === 'update|blogs') {
 
       } else if (name === 'delete|blogs') {
-
+        await apiDELETE('/blogs', elements);
       }
     } else if (func === 'navigation') {
     }

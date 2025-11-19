@@ -1,5 +1,7 @@
 import {NextRequest, NextResponse} from "next/server";
 import prisma from "@/lib/prisma";
+import {Blog} from "@/types/types";
+import {deleteObjects} from "@/lib/cloudflare";
 
 export async function GET() {
   const blogs = await prisma.blog.findMany({
@@ -62,5 +64,37 @@ export async function POST(req: NextRequest) {
       }
     })
   ])
+  return NextResponse.json({ ok: true });
+}
+
+export async function DELETE(req: NextRequest) {
+  const blogs = await req.json();
+  const ids = blogs.map((blog: Blog) => blog.id);
+  const keys: string[] = [];
+  for (const blog of blogs) {
+    keys.push(`blogs/${blog.thumbnail}`);
+    for (const paragraph of blog.paragraphs) {
+      if (paragraph.thumbnail) {
+        keys.push(`blogs/${paragraph.thumbnail}`);
+      }
+    }
+  }
+  await prisma.blog.deleteMany({
+    where: {
+      id: { in: ids }
+    }
+  })
+  const remaining = await prisma.blog.findMany({
+    orderBy: { index: 'asc' },
+    select: { id: true }
+  })
+  const reindex = remaining.map((blog, newIndex) => {
+    return prisma.blog.update({
+      where: { id: blog.id },
+      data: { index: newIndex }
+    })
+  })
+  await prisma.$transaction(reindex);
+  await deleteObjects(keys);
   return NextResponse.json({ ok: true });
 }

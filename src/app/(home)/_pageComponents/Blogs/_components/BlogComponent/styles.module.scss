@@ -24,10 +24,10 @@
   }
   .imageContainer {
     position: relative;
-    max-width: 25rem;
     aspect-ratio: 1;
+    width: 100%;
     .image {
-      object-fit: cover;
+      object-fit: fill;
       border-radius: 1rem;
     }
   }

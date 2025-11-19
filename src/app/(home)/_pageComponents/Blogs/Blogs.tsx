@@ -4,14 +4,15 @@ import BlogComponent from "@/app/(home)/_pageComponents/Blogs/_components/BlogCo
 import {AdminBlogsButtons, AdminBlogsCrudButtons} from "@/objects/buttons";
 import Button from "@/components/Button/Button";
 import {useAuth} from "@/contexts/authContext";
-import {useEffect, useState} from "react";
+import {useEffect, useMemo, useState} from "react";
 import {useRouter} from "next/navigation";
 import type { Button as ButtonType, Blog as BlogType } from '@/types/types';
 import {useHandleClickAction} from "@/actions/clickAction";
 import {useBlogs} from "@/hooks/useBlogs";
+import Icon from "@/components/Icon/Icon";
 
 export default function Blogs() {
-  const defaultPageSize = 8;
+  const defaultPageSize = 4;
 
   const { blogs, mutateBlogs } = useBlogs();
   const router = useRouter();
@@ -19,6 +20,7 @@ export default function Blogs() {
   const handleClickAction = useHandleClickAction();
 
   const [items, setItems] = useState<BlogType[]>([]);
+  const [currentPage, setCurrentPage] = useState(0);
   const [selecting, setSelecting] = useState(false);
   const [sorting, setSorting] = useState(false);
   const [selectedBlogs, setSelectedBlogs] = useState<BlogType[]>([]);
@@ -30,6 +32,12 @@ export default function Blogs() {
       setItems(sorted);
     }
   }, [blogs]);
+
+  const totalPages = Math.max(0, Math.ceil(items.length / defaultPageSize) - 1);
+  const pageItems = useMemo(
+    () => items.slice(currentPage * defaultPageSize, currentPage * defaultPageSize + defaultPageSize),
+    [items, defaultPageSize, currentPage]
+  )
 
   const toggleAdminBlogButtons = () => {
     if (selecting) {
@@ -63,6 +71,11 @@ export default function Blogs() {
          await handleClickAction(button, blogs);
       } else if (name === 'delete|blogs') {
         await handleClickAction(button, selectedBlogs);
+        await mutateBlogs();
+        setSelecting(false);
+        setSorting(false);
+        setSelectedBlogs([]);
+        setSortedBlogs([]);
       }
     }
   }
@@ -101,19 +114,29 @@ export default function Blogs() {
           )
         })}
       </div>
-      <div className={styles.blogs}>
-        {items.map((blog, i) => {
-          return (
-            <div key={blog.id}
-                 className={`${styles.blog} ${selecting && !blogSelected(blog) ? 'opacity-40' : 'opacity-100'}`}
-                 onClick={() => toggleClick(blog)}
-                 draggable={sorting}
-            >
-              {sorting && <span className={styles.index}>{i + 1}</span>}
-              <BlogComponent blog={blog} user={sorting || selecting ? null : user}/>
-            </div>
-          )
-        })}
+      <div className={styles.blogListContainer}>
+        <div onClick={() => setCurrentPage(p => Math.max(0, p - 1))}
+             className={`${styles.arrow} ${currentPage === 0 ? 'opacity-20 pointer-events-none' : 'opacity-100 pointer-events-auto'}`}>
+          <Icon icon={'arrow_left'} />
+        </div>
+        <div className={styles.blogs}>
+          {pageItems.map((blog, i) => {
+            return (
+              <div key={blog.id}
+                   className={`${styles.blog} ${selecting && !blogSelected(blog) ? 'opacity-40' : 'opacity-100'}`}
+                   onClick={() => toggleClick(blog)}
+                   draggable={sorting}
+              >
+                {sorting && <span className={styles.index}>{i + 1}</span>}
+                <BlogComponent blog={blog} user={sorting || selecting ? null : user}/>
+              </div>
+            )
+          })}
+        </div>
+        <div onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+             className={`${styles.arrow} ${currentPage >= Math.ceil(items.length / defaultPageSize) - 1 ? 'opacity-20 pointer-events-none' : 'opacity-100 pointer-events-auto'}`}>
+          <Icon icon={'arrow_right'} />
+        </div>
       </div>
     </div>
   )
