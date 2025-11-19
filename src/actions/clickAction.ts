@@ -36,7 +36,7 @@ export function useHandleClickAction() {
         }
         await apiPOST('/blogs', { blog, paragraphs });
       } else if (name === 'update|blogs') {
-
+        await apiPUT('/blogs', elements);
       } else if (name === 'delete|blogs') {
         await apiDELETE('/blogs', elements);
       }

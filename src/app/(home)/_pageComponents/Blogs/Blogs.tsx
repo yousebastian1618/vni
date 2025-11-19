@@ -4,7 +4,7 @@ import BlogComponent from "@/app/(home)/_pageComponents/Blogs/_components/BlogCo
 import {AdminBlogsButtons, AdminBlogsCrudButtons} from "@/objects/buttons";
 import Button from "@/components/Button/Button";
 import {useAuth} from "@/contexts/authContext";
-import {useEffect, useMemo, useState} from "react";
+import {useEffect, useMemo, useRef, useState} from "react";
 import {useRouter} from "next/navigation";
 import type { Button as ButtonType, Blog as BlogType } from '@/types/types';
 import {useHandleClickAction} from "@/actions/clickAction";
@@ -13,6 +13,8 @@ import Icon from "@/components/Icon/Icon";
 
 export default function Blogs() {
   const defaultPageSize = 4;
+  const draggingItem = useRef<BlogType | null>(null);
+  const dragoverItem = useRef<BlogType | null>(null);
 
   const { blogs, mutateBlogs } = useBlogs();
   const router = useRouter();
@@ -20,11 +22,11 @@ export default function Blogs() {
   const handleClickAction = useHandleClickAction();
 
   const [items, setItems] = useState<BlogType[]>([]);
+  const [pageSize, setPageSize] = useState(defaultPageSize);
   const [currentPage, setCurrentPage] = useState(0);
   const [selecting, setSelecting] = useState(false);
   const [sorting, setSorting] = useState(false);
   const [selectedBlogs, setSelectedBlogs] = useState<BlogType[]>([]);
-  const [sortedBlogs, setSortedBlogs] = useState<BlogType[]>([]);
 
   useEffect(() => {
     if (blogs) {
@@ -33,10 +35,10 @@ export default function Blogs() {
     }
   }, [blogs]);
 
-  const totalPages = Math.max(0, Math.ceil(items.length / defaultPageSize) - 1);
+  const totalPages = Math.max(0, Math.ceil(items.length / pageSize) - 1);
   const pageItems = useMemo(
-    () => items.slice(currentPage * defaultPageSize, currentPage * defaultPageSize + defaultPageSize),
-    [items, defaultPageSize, currentPage]
+    () => items.slice(currentPage * pageSize, currentPage * pageSize + pageSize),
+    [items, pageSize, currentPage]
   )
 
   const toggleAdminBlogButtons = () => {
@@ -56,27 +58,33 @@ export default function Blogs() {
         setSelecting(false);
         setSorting(false);
         setSelectedBlogs([]);
-        setSortedBlogs([]);
+        setPageSize(defaultPageSize);
+        if (blogs) {
+          const sorted = [...blogs].sort((a, b) => a.index - b.index);
+          setItems(sorted);
+        }
       } else if (name === 'select|blogs') {
+        setPageSize(items.length);
         setSelecting(true);
         setSelectedBlogs([]);
       } else if (name === 'sort|blogs') {
+        setPageSize(items.length);
         setSorting(true);
-        setSortedBlogs([]);
+        setSelectedBlogs([]);
       } else if (name === 'add|blogs') {
         router.push('/add-blogs');
       }
     } else if (func === 'crud') {
       if (name === 'update|blogs') {
-         await handleClickAction(button, blogs);
+        await handleClickAction(button, items);
       } else if (name === 'delete|blogs') {
         await handleClickAction(button, selectedBlogs);
-        await mutateBlogs();
-        setSelecting(false);
-        setSorting(false);
-        setSelectedBlogs([]);
-        setSortedBlogs([]);
       }
+      await mutateBlogs();
+      setPageSize(defaultPageSize);
+      setSelecting(false);
+      setSorting(false);
+      setSelectedBlogs([]);
     }
   }
 
@@ -102,6 +110,39 @@ export default function Blogs() {
     return selectedBlogs.some((i) => i.id === blog.id);
   }
 
+  const handleOnDragStart = (item: BlogType) => {
+    if (!sorting) return;
+    draggingItem.current = item;
+  }
+
+  const handleOnDragEnter = (item: BlogType) => {
+    if (!sorting) return;
+    const dragItem = draggingItem.current;
+    if (!dragItem) return;
+    if (dragItem.id === item.id) return;
+    dragoverItem.current = item;
+    setItems((prev) => {
+      const updated = [...prev];
+      const dragIndex = updated.findIndex((p) => p.id === dragItem.id);
+      const overIndex = updated.findIndex((p) => p.id  === item.id);
+      if (dragIndex === -1 || overIndex === -1) return prev;
+      if (dragIndex === overIndex) return prev;
+      const [removed] = updated.splice(dragIndex, 1);
+      updated.splice(overIndex, 0, removed);
+      return updated;
+    })
+  }
+
+  const handleDragEnd = () => {
+    if (!sorting) return;
+    setItems((prev) =>
+      prev.map((item, index) => ({
+        ...item,
+        index
+      }))
+    )
+  }
+
   return (
     <div className={styles.blogsContainer}>
       <SectionTitle title={'Blogs'} layout={'right'} />
@@ -115,10 +156,12 @@ export default function Blogs() {
         })}
       </div>
       <div className={styles.blogListContainer}>
-        <div onClick={() => setCurrentPage(p => Math.max(0, p - 1))}
-             className={`${styles.arrow} ${currentPage === 0 ? 'opacity-20 pointer-events-none' : 'opacity-100 pointer-events-auto'}`}>
-          <Icon icon={'arrow_left'} />
-        </div>
+        {!(sorting || selecting) && (
+          <div onClick={() => setCurrentPage(p => Math.max(0, p - 1))}
+               className={`${styles.arrow} ${currentPage === 0 ? 'opacity-20 pointer-events-none' : 'opacity-100 pointer-events-auto'}`}>
+            <Icon icon={'arrow_left'} />
+          </div>
+        )}
         <div className={styles.blogs}>
           {pageItems.map((blog, i) => {
             return (
@@ -126,6 +169,10 @@ export default function Blogs() {
                    className={`${styles.blog} ${selecting && !blogSelected(blog) ? 'opacity-40' : 'opacity-100'}`}
                    onClick={() => toggleClick(blog)}
                    draggable={sorting}
+                   onDragStart={() => handleOnDragStart(blog)}
+                   onDragEnter={() => handleOnDragEnter(blog)}
+                   onDragEnd={handleDragEnd}
+                   onDragOver={(e) => e.preventDefault()}
               >
                 {sorting && <span className={styles.index}>{i + 1}</span>}
                 <BlogComponent blog={blog} user={sorting || selecting ? null : user}/>
@@ -133,10 +180,12 @@ export default function Blogs() {
             )
           })}
         </div>
-        <div onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
-             className={`${styles.arrow} ${currentPage >= Math.ceil(items.length / defaultPageSize) - 1 ? 'opacity-20 pointer-events-none' : 'opacity-100 pointer-events-auto'}`}>
-          <Icon icon={'arrow_right'} />
-        </div>
+        {!(sorting || selecting) && (
+          <div onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+               className={`${styles.arrow} ${currentPage >= Math.ceil(items.length / pageSize) - 1 ? 'opacity-20 pointer-events-none' : 'opacity-100 pointer-events-auto'}`}>
+            <Icon icon={'arrow_right'} />
+          </div>
+        )}
       </div>
     </div>
   )

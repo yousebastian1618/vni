@@ -131,17 +131,13 @@ export default function Products() {
     } else {
       if (selecting) {
         await handleClickAction(button, selectedProducts);
-        await mutateProducts();
-        setSelecting(false);
-        setSorting(false);
-        setSelectedProducts([]);
       } else if (sorting) {
         await handleClickAction(button, items);
-        await mutateProducts();
-        setSelecting(false);
-        setSorting(false);
-        setSelectedProducts([]);
       }
+      await mutateProducts();
+      setSelecting(false);
+      setSorting(false);
+      setSelectedProducts([]);
     }
   }
 

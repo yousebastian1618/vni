@@ -67,6 +67,17 @@ export async function POST(req: NextRequest) {
   return NextResponse.json({ ok: true });
 }
 
+export async function PUT(req: NextRequest) {
+  const updatedBlogs = await req.json();
+  await prisma.$transaction(
+    updatedBlogs.map((b: Blog) => prisma.blog.update({
+      where: { id: b.id },
+      data: { index: b.index }
+    }))
+  )
+  return NextResponse.json({ ok: true });
+}
+
 export async function DELETE(req: NextRequest) {
   const blogs = await req.json();
   const ids = blogs.map((blog: Blog) => blog.id);
