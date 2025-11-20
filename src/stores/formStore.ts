@@ -9,6 +9,7 @@ type FormState = {
 type FormAction = {
   addForm: (formName: string, form: InputElement[]) => void;
   getForm: (formName: string) => InputElement[];
+  setForm: (formName: string, obj: any) => void;
   setValue: (formName: string, name: string, value: string | File | number | null) => void;
   getValue: (formName: string, name: string) => any;
   convertToParams: (formName: string) => Record<string, string>;
@@ -62,6 +63,27 @@ export const useFormStore = create<FormState & FormAction>((set, get) => ({
       obj['index'] = formName.split(' ')[1];
     }
     return [obj, formData];
+  },
+  setForm: (formName: string, obj: any)=> {
+    return set((state) => {
+      const form = state.forms[formName];
+      if (!form) return state;
+      const updatedForm = form.map((input) => {
+        if (Object.prototype.hasOwnProperty.call(obj, input.name)) {
+          return {
+            ...input,
+            value: obj[input.name],
+          };
+        }
+        return input;
+      });
+      return {
+        forms: {
+          ...state.forms,
+          [formName]: updatedForm,
+        },
+      };
+    });
   },
   getContents: (formName: string) => {
     const form = get().forms[formName];

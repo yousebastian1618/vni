@@ -1,14 +1,10 @@
 import styles from './styles.module.scss';
-import {InputElement} from "@/types/types";
 import {useFormStore} from "@/stores/formStore";
 import Image from "next/image";
-import {useMemo} from "react";
 
 export default function Preview() {
 
-  const { forms, getForm, getValue } = useFormStore();
-
-  const blogForm = forms['Blog'];
+  const { forms, getValue } = useFormStore();
 
   const getParagraphs = () => {
     let index = 1
@@ -20,8 +16,9 @@ export default function Preview() {
     return paragraphs;
   }
 
-  const previewUrl = (value: File) => {
+  const previewUrl = (value: File | string) => {
     if (!value) return null;
+    if (typeof(value) === 'string') return value;
     return URL.createObjectURL(value);
   };
 
@@ -32,7 +29,7 @@ export default function Preview() {
       <div className={styles.blogThumbnailContainer}>
         <Image
           className={styles.blogThumbnail}
-          src={previewUrl(getValue('Blog', 'mainThumbnail')) as string}
+          src={previewUrl(getValue('Blog', 'thumbnail')) as string}
           alt="Main Blog"
           fill
           draggable={false}
@@ -49,7 +46,7 @@ export default function Preview() {
                 <div className={styles.paragraphThumbnailContainer}>
                   <Image
                     className={styles.paragraphThumbnail}
-                    src={previewUrl(paragraph[0].value as File) as string}
+                    src={previewUrl(paragraph[0].value as File | string) as string}
                     alt={`Paragraph ${index + 1}`}
                     fill
                     draggable={false}

@@ -10,7 +10,7 @@
   .editIcon {
     position: absolute;
     z-index: 1;
-    left: 82%;
+    left: 80%;
     top: 5%;
     padding: 0.5ex 1ex;
     cursor: pointer;
@@ -36,17 +36,20 @@
     flex-direction: column;
     text-align: center;
     position: relative;
+    overflow: hidden;
     .blogTitle {
       font-weight: bold;
       letter-spacing: 0.5rex;
-      line-height: 3rem;
+      width: 100%;
+      white-space: normal;
+      word-break: break-word;
     }
     .blogAuthor {
       text-align: right;
       font-weight: bold;
       font-size: 0.8rem;
       width: 90%;
-      margin: auto;
+      margin: 1rem auto 0 auto;
     }
   }
 }

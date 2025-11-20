@@ -262,7 +262,7 @@ export const AddBlogForms: InputElement[] = [
     }
   },
   {
-    name: 'mainThumbnail',
+    name: 'thumbnail',
     label: 'Main Thumbnail',
     type: 'file',
     value: '',
@@ -276,7 +276,7 @@ export const AddBlogForms: InputElement[] = [
 
 export const AddBlogParagraphForm: InputElement[] = [
   {
-    name: 'paragraphThumbnail',
+    name: 'thumbnail',
     label: 'Paragraph Thumbnail',
     type: 'file',
     value: '',
@@ -287,7 +287,7 @@ export const AddBlogParagraphForm: InputElement[] = [
     }
   },
   {
-    name: 'paragraphTitle',
+    name: 'title',
     label: 'Paragraph Title',
     type: 'text',
     value: '',

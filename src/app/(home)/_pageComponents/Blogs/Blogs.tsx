@@ -72,7 +72,7 @@ export default function Blogs() {
         setSorting(true);
         setSelectedBlogs([]);
       } else if (name === 'add|blogs') {
-        router.push('/add-blogs');
+        router.push('/crud-blog');
       }
     } else if (func === 'crud') {
       if (name === 'update|blogs') {

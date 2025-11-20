@@ -3,31 +3,56 @@ import styles from './styles.module.scss';
 import Form from "@/components/Form/Form";
 import {AddBlogForms, AddBlogParagraphForm} from "@/objects/forms";
 import {AdminBlogRemovalButton, AdminBlogsAddButtons, AdminCrudBlogsButtons} from "@/objects/buttons";
-import type {Button as ButtonType, InputElement} from "@/types/types";
+import type {Blog, Button as ButtonType, InputElement} from "@/types/types";
 import Button from "@/components/Button/Button";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Icon from "@/components/Icon/Icon";
 import {useRouter} from "next/navigation";
 import {useHandleClickAction} from "@/actions/clickAction";
 import {useFormStore} from "@/stores/formStore";
-import Preview from "@/app/(blogs)/add-blogs/_components/Preview/Preview";
+import Preview from "@/app/(blogs)/crud-blog/_components/Preview/Preview";
+
 
 type ParagraphItem = {
   id: string;
-  form: InputElement[]
+  form: InputElement[],
+}
+type BlogSeedProps = {
+  blog?: Blog
 }
 
-export default function AddBlogs() {
+export default function BlogSeed({ blog }: BlogSeedProps) {
 
-  const { forms, convertToParams } = useFormStore();
-
+  const { forms, convertToParams, setForm, addForm } = useFormStore();
   const router = useRouter();
+  const { swapFormNames } = useFormStore();
+  const handleClickAction = useHandleClickAction();
   const [paragraphs, setParagraphs] = useState<ParagraphItem[]>([]);
   const [previewing, setPreviewing] = useState<boolean>(false);
 
-  const { swapFormNames } = useFormStore();
 
-  const handleClickAction = useHandleClickAction();
+
+  useEffect(() => {
+    if (!blog) return;
+    setForm('Blog', blog);
+    if (blog.paragraphs && blog.paragraphs.length > 0) {
+      const initialParagraphs: ParagraphItem[] = blog.paragraphs.map((p, idx) => {
+        const label = `Paragraph ${idx + 1}`;
+        const paragraphForm: InputElement[] = AddBlogParagraphForm.map((field) => ({
+          ...field,
+          value: (p as any)[field.name] ?? field.value,
+        }));
+        addForm(label, paragraphForm);
+        return {
+          id: crypto.randomUUID(),
+          form: paragraphForm,
+        };
+      });
+      setParagraphs(initialParagraphs);
+    }
+  }, [blog, setForm, addForm]);
+
+
 
   const filteredCrudButtons = () => {
     if (previewing) {
@@ -83,7 +108,7 @@ export default function AddBlogs() {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.label}>Add / Update Blog</h2>
+      <h2 className={styles.label}>{blog ? 'Edit Blog' : 'Add Blog'}</h2>
       {previewing ? (
         <Preview />
       ) : (

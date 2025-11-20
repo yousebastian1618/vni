@@ -34,11 +34,15 @@ export default function FileInput({ inputElement, onChange }: Props) {
 
   const previewUrl = useMemo(() => {
     if (!value) return null;
+    if (typeof(value) === 'string') {
+      return value;
+    }
     return URL.createObjectURL(value as File);
   }, [value])
 
   return (
     <div className={styles.container}>
+      {/*{value}*/}
       <span>{label}</span>
       <div className={styles.innerContainer} onClick={addFile}>
         <input type={type}

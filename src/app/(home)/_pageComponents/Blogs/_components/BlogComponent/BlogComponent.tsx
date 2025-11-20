@@ -3,6 +3,7 @@ import type {Blog, User} from '@/types/types';
 import Image from "next/image";
 import Icon from "@/components/Icon/Icon";
 import React from "react";
+import Link from "next/link";
 
 type Props = {
   blog: Blog,
@@ -11,16 +12,14 @@ type Props = {
 
 export default function BlogComponent({ blog, user }: Props) {
 
-  const editBlog = (e: React.MouseEvent<HTMLSpanElement>) => {
-    e.stopPropagation();
-  }
-
   return (
     <div className={styles.container}>
       {user && (
-        <span className={styles.editIcon} onClick={(e) => editBlog(e)}>
-          <Icon icon={'edit'} />
-        </span>
+        <Link href={`/crud-blog/${blog.id}`} onClick={(e) => e.stopPropagation()}>
+          <span className={styles.editIcon}>
+            <Icon icon={'edit'} />
+          </span>
+        </Link>
       )}
       <div className={styles.imageContainer}>
         <Image
