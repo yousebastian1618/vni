@@ -56,9 +56,9 @@ export default function BlogSeed({ blog }: BlogSeedProps) {
 
   const filteredCrudButtons = () => {
     if (previewing) {
-      return AdminCrudBlogsButtons.filter((b) => !(b.name === 'preview|blogs' || b.name === 'cancel'));
+      return AdminCrudBlogsButtons.filter((b) => !(b.name === 'previewBlogs' || b.name === 'cancel'));
     }
-    return AdminCrudBlogsButtons.filter((b) => !(b.name === 'submit|blogs' || b.name === 'goback|blogs'));
+    return AdminCrudBlogsButtons.filter((b) => !(b.name === 'create|/blogs' || b.name === 'gobackBlogs'));
   }
 
   const handleClick = async (button: ButtonType) => {
@@ -75,25 +75,30 @@ export default function BlogSeed({ blog }: BlogSeedProps) {
         }])
         return;
       }
-      if (name === 'preview|blogs') {
+      if (name === 'previewBlogs') {
         setPreviewing(true);
         return;
       }
-      if (name === 'goback|blogs') {
+      if (name === 'gobackBlogs') {
         setPreviewing(false);
         return;
       }
     } else {
-      const blog = convertToParams('Blog');
+      const updatedBlog = convertToParams('Blog');
       const paragraphs = [];
       let index = 1;
       while (forms[`Paragraph ${index}`]) {
         paragraphs.push(convertToParams(`Paragraph ${index}`));
         index += 1;
       }
-      await handleClickAction(button, {
-        'blog': blog,
-        'paragraphs': paragraphs
+      let currButton = {...button};
+      if (blog) {
+        currButton.name = 'update|/blog';
+      }
+      await handleClickAction(currButton, {
+        'blog': updatedBlog,
+        'paragraphs': paragraphs,
+        'blogId': blog ? blog.id : null
       });
       router.push('/');
     }

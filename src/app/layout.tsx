@@ -5,6 +5,7 @@ import {LoadingProvider} from "@/contexts/loadingContext";
 import AppShell from "@/app/AppShell";
 import {AuthProvider} from "@/contexts/authContext";
 import {ModalProvider} from "@/contexts/modalContext";
+import {StatusProvider} from "@/contexts/statusContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,9 +44,11 @@ export default async function RootLayout({
         <LoadingProvider>
           <ModalProvider>
             <AuthProvider>
-              <AppShell>
-                {children}
-              </AppShell>
+              <StatusProvider>
+                <AppShell>
+                  {children}
+                </AppShell>
+              </StatusProvider>
             </AuthProvider>
           </ModalProvider>
         </LoadingProvider>

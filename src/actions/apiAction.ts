@@ -48,7 +48,12 @@ export function useApiAction() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
       })
-      return await response.json();
+      const res = await response.json();
+      const status = response.status;
+      return {
+        status: status,
+        data: res
+      }
     } finally {
       decrement();
     }
@@ -58,10 +63,16 @@ export function useApiAction() {
     increment();
     try {
       const params: any[] = payload;
-      await fetch(api, {
+      const response = await fetch(api, {
         method: 'DELETE',
         body: JSON.stringify(params)
       })
+      const res = await response.json();
+      const status = response.status;
+      return {
+        status: status,
+        data: res
+      }
     } finally {
       decrement();
     }

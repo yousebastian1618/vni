@@ -9,11 +9,3 @@ export async function hashPassword(plain: string) {
 export function verifyPassword(plain: string, hash: string) {
   return bcrypt.compare(plain, hash);
 }
-
-export function formToObject(form: InputElement[]) {
-  let obj: Record<string, any> = {};
-  for (let inputElement of form) {
-    obj[inputElement.name] = inputElement.value;
-  }
-  return obj;
-}

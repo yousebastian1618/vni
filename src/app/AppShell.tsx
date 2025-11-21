@@ -5,11 +5,14 @@ import {useLoading} from "@/contexts/loadingContext";
 import Loading from "@/components/Loading/Loading";
 import {useModal} from "@/contexts/modalContext";
 import Modal from "@/components/Modal/Modal";
+import {useStatus} from "@/contexts/statusContext";
+import StatusBar from "@/components/StatusBar/StatusBar";
 
 export default function AppShell({ children }: Readonly<{ children: ReactNode}>) {
 
   const { count } = useLoading();
   const { modalOpen } = useModal();
+  const { showStatus } = useStatus();
 
   return (
     <>
@@ -18,6 +21,9 @@ export default function AppShell({ children }: Readonly<{ children: ReactNode}>)
       </div>
       <div className={modalOpen ? styles.modalOpen : styles.modalClose}>
         <Modal />
+      </div>
+      <div className={showStatus ? styles.statusActive : styles.statusInactive}>
+        <StatusBar />
       </div>
       <div className={count ? styles.disableOpacity : ''}>
         {children}

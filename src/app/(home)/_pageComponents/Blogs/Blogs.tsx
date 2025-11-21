@@ -63,23 +63,23 @@ export default function Blogs() {
           const sorted = [...blogs].sort((a, b) => a.index - b.index);
           setItems(sorted);
         }
-      } else if (name === 'select|blogs') {
+      } else if (name === 'selectBlogs') {
         setPageSize(items.length);
         setSelecting(true);
         setSelectedBlogs([]);
-      } else if (name === 'sort|blogs') {
+      } else if (name === 'sortBlogs') {
         setPageSize(items.length);
         setSorting(true);
         setSelectedBlogs([]);
-      } else if (name === 'add|blogs') {
+      } else if (name === 'addBlogs') {
         router.push('/crud-blog');
       }
     } else if (func === 'crud') {
-      if (name === 'update|blogs') {
-        await handleClickAction(button, items);
-      } else if (name === 'delete|blogs') {
-        await handleClickAction(button, selectedBlogs);
+      let elements = items;
+      if (name === 'delete|/blogs') {
+        elements = selectedBlogs;
       }
+      await handleClickAction(button, elements);
       await mutateBlogs();
       setPageSize(defaultPageSize);
       setSelecting(false);

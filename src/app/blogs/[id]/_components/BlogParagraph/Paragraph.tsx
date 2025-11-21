@@ -13,7 +13,7 @@ export default function BlogParagraph({ paragraph }: Props) {
         <div className={styles.paragraphTitle}>
           {paragraph.title}
         </div>
-        {paragraph.thumbnail !== '' && (
+        {(paragraph.thumbnail && paragraph.thumbnail !== '') && (
           <div className={styles.thumbnailContainer}>
             <Image
               className={styles.thumbnail}

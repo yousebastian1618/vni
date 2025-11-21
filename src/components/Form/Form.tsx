@@ -19,7 +19,7 @@ export default function Form({ label, form, buttons }: Props) {
 
   const handleClickAction = useHandleClickAction();
 
-  const { forms, setValue, addForm } = useFormStore();
+  const { forms, setValue, addForm, convertToParams, resetForm } = useFormStore();
 
   useEffect(() => {
     if (!forms[label]) {
@@ -36,7 +36,10 @@ export default function Form({ label, form, buttons }: Props) {
   // }, [])
 
   const handleClick = async (button: ButtonType) => {
-    await handleClickAction(button, forms[label]);
+    await handleClickAction(button, convertToParams(label));
+    setTimeout(() => {
+      resetForm(label);
+    })
   }
 
   if (!forms[label]) {

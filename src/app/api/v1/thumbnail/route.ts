@@ -16,7 +16,7 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
   const formData = await req.formData();
   const file = formData.get('file') as File | null;
-  if (!file) return NextResponse.json({ ok: 'File is required' })
+  if (!file) return NextResponse.json(null)
   const loc = formData.get('location') ?? '';
   const id = uuid();
   const key = `${loc}${id}`;

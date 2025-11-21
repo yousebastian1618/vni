@@ -101,6 +101,7 @@ export default function Products() {
       formData.append('location', 'products/');
       const button = {...AdminProductsButtons[0]}
       button.func = 'crud';
+      button.name = 'create|/products';
       await handleClickAction(button, formData);
     }
     await mutateProducts();
@@ -109,13 +110,13 @@ export default function Products() {
   const onHandleClick = async (button: ButtonType) => {
     const { name, func } = button;
     if (func === 'navigation') {
-      if (name === 'add|products') {
+      if (name === 'addProducts') {
         fileInputRef.current?.click();
-      } else if (name === 'select|products') {
+      } else if (name === 'selectProducts') {
         setPageSize(items.length)
         setSelecting(true);
         setSelectedProducts([]);
-      } else if (name === 'sort|products') {
+      } else if (name === 'sortProducts') {
         setPageSize(items.length)
         setSorting(true);
       } else if (name === 'cancel') {
