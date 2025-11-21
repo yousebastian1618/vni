@@ -18,8 +18,7 @@ type Props = {
 export default function Form({ label, form, buttons }: Props) {
 
   const handleClickAction = useHandleClickAction();
-
-  const { forms, setValue, addForm, convertToParams, resetForm } = useFormStore();
+  const { forms, setValue, addForm, convertToParams, resetForm, checkErrors } = useFormStore();
 
   useEffect(() => {
     if (!forms[label]) {
@@ -31,16 +30,17 @@ export default function Form({ label, form, buttons }: Props) {
     setValue(label, name, value)
   }, [label, setValue]);
 
-  // const setError = useCallback((name: string, error: boolean, errorMessage = "") => {
-    // dispatch({ type: 'set_error', name, error, errorMessage });
-  // }, [])
-
   const handleClick = async (button: ButtonType) => {
+    const hasError = checkErrors(label); // fresh value from the store update
+    if (hasError) {
+      return;
+    }
     await handleClickAction(button, convertToParams(label));
     setTimeout(() => {
       resetForm(label);
     })
   }
+
 
   if (!forms[label]) {
     return null;
@@ -56,16 +56,12 @@ export default function Form({ label, form, buttons }: Props) {
             )
           }
           return (
-            <TextInput
-              key={formInput.name}
-              inputElement={formInput}
-              onChange={(name, val) => handleChange(name, val)}
-              // onBlur={( name, val ) => {
-              //   const required = formInput.required;
-              //   const empty = !String(val).trim();
-              //   setError(name, required && empty, required && empty ? 'Required' : '');
-              // }}
-            />
+            <div key={formInput.name}>
+              <TextInput
+                inputElement={formInput}
+                onChange={(name, val) => handleChange(name, val)}
+              />
+            </div>
           )
         })}
       </form>

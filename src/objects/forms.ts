@@ -76,7 +76,7 @@ export const ContactUsForm: InputElement[] = [
     checkErrors: {
       "NOT_EMPTY": {
         criteria: "",
-        message: "Subject cannot be empty"
+        message: "Message cannot be empty"
       }
     }
   }
@@ -270,6 +270,10 @@ export const AddBlogForms: InputElement[] = [
     error: false,
     errorMessage: '',
     checkErrors: {
+      "NOT_EMPTY": {
+        criteria: "",
+        message: "Main Thumbnail is required"
+      }
     }
   },
 ]
@@ -312,7 +316,7 @@ export const AddBlogParagraphForm: InputElement[] = [
     checkErrors: {
       "NOT_EMPTY": {
         criteria: "",
-        message: "Paragraph Title cannot be empty"
+        message: "Paragraph cannot be empty"
       }
     }
   },

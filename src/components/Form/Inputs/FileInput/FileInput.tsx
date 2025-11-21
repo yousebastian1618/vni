@@ -10,7 +10,7 @@ type Props = {
 }
 
 export default function FileInput({ inputElement, onChange }: Props) {
-  const { name, label, type, value = null } = inputElement;
+  const { name, label, type, value = null, error, errorMessage } = inputElement;
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const addFile = () => {
@@ -43,7 +43,10 @@ export default function FileInput({ inputElement, onChange }: Props) {
   return (
     <div className={styles.container}>
       {/*{value}*/}
-      <span>{label}</span>
+      <span>
+        {label}
+        {/*{error && <span className={styles.errorMessage}>&nbsp;&nbsp;({errorMessage})</span>}*/}
+      </span>
       <div className={styles.innerContainer} onClick={addFile}>
         <input type={type}
                ref={fileInputRef}
@@ -68,6 +71,7 @@ export default function FileInput({ inputElement, onChange }: Props) {
         ) : (
           <div className={styles.innerMessage}>
             Click Here To Upload File
+            {error && <div className={styles.errorMessage}>&nbsp;&nbsp;({errorMessage})</div>}
           </div>
         )}
       </div>

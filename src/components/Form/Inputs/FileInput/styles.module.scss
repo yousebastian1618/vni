@@ -24,6 +24,9 @@
       font-size: 2rem;
       text-align: center;
       margin: auto;
+      .errorMessage {
+        color: red;
+      }
     }
   }
   .fileContainer {

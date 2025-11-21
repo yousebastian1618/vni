@@ -11,6 +11,7 @@ import {useRouter} from "next/navigation";
 import {useHandleClickAction} from "@/actions/clickAction";
 import {useFormStore} from "@/stores/formStore";
 import Preview from "@/app/(blogs)/crud-blog/_components/Preview/Preview";
+import {useStatus} from "@/contexts/statusContext";
 
 
 type ParagraphItem = {
@@ -23,7 +24,8 @@ type BlogSeedProps = {
 
 export default function BlogSeed({ blog }: BlogSeedProps) {
 
-  const { forms, convertToParams, setForm, addForm } = useFormStore();
+  const { forms, convertToParams, setForm, addForm, checkErrors } = useFormStore();
+  const { setStatus } = useStatus();
   const router = useRouter();
   const { swapFormNames } = useFormStore();
   const handleClickAction = useHandleClickAction();
@@ -76,6 +78,21 @@ export default function BlogSeed({ blog }: BlogSeedProps) {
         return;
       }
       if (name === 'previewBlogs') {
+        const hasError = checkErrors('Blog'); // fresh value from the store update
+        if (hasError) {
+          return;
+        }
+        if (paragraphs.length === 0) {
+          setStatus('error', 'At least one paragraph is required.');
+          return;
+        }
+        let index = 1;
+        while (`Paragraph ${index}` in forms) {
+          if (checkErrors(`Paragraph ${index}`)) {
+            return;
+          }
+          index += 1;
+        }
         setPreviewing(true);
         return;
       }

@@ -2,7 +2,7 @@ import {Button} from "@/types/types";
 
 export const LoginButtons: Button[] = [
   {
-    name: 'login|/login',
+    name: 'auth|/login',
     label: 'Login',
     func: 'crud',
     crudType: 'POST',

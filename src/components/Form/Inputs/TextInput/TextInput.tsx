@@ -6,10 +6,9 @@ import type { InputElement } from "@/types/types";
 type Props = {
   inputElement: InputElement;
   onChange: (name: string, value: string) => void;
-  onBlur?: (name: string, value: string) => void;
 };
 
-function TextInputBase({ inputElement, onChange, onBlur }: Props) {
+function TextInputBase({ inputElement, onChange }: Props) {
   const { name, label, type, value = "", error, errorMessage } = inputElement;
 
 
@@ -18,17 +17,11 @@ function TextInputBase({ inputElement, onChange, onBlur }: Props) {
     [name, onChange]
   )
 
-  const handleBlur = useCallback(
-    (v: string) => onBlur?.(name, v),
-    [name, onBlur]
-  )
-
   const commonProps = {
     className: styles.inputElement,
     placeholder: label ?? "Type here...",
     value: value as string,
     onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => handleChange(e.target.value),
-    onBlur: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => handleBlur?.(e.target.value),
     'aria-invalid': error || undefined,
     'aria-describedby': error ? `${name}-error` : undefined,
     name: name,
@@ -37,17 +30,14 @@ function TextInputBase({ inputElement, onChange, onBlur }: Props) {
 
   return (
     <div className={styles.inputContainer}>
-      <span className={styles.inputLabel}>{label}</span>
+      <span className={styles.inputLabel}>
+        {label}
+        {error && <span className={styles.errorMessage}>&nbsp;&nbsp;({errorMessage})</span>}
+      </span>
       {type === "textarea" ? (
         <textarea {...commonProps} rows={10} />
       ) : (
         <input {...commonProps} />
-      )}
-
-      {error && (
-        <div id={`${name}-error`} className={styles.inputError}>
-          {errorMessage || "Invalid value"}
-        </div>
       )}
     </div>
   )

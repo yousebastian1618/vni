@@ -1,9 +1,10 @@
 import { create } from 'zustand';
 import type {Button, InputElement} from "@/types/types";
+import {errorHandling} from "@/actions/errorAction";
 
 type FormState = {
   forms: Record<string, InputElement[]>;
-  buttons?: Button[]
+  buttons?: Button[];
 }
 
 type FormAction = {
@@ -15,6 +16,7 @@ type FormAction = {
   convertToParams: (formName: string) => Record<string, string>;
   getContents: (formName: string) => FormData;
   swapFormNames: (formName1: string, formName2: string) => void;
+  checkErrors: (formName: string) => boolean;
   setError: (formName: string, name: string, errorMessage: string) => void;
   removeError: (formName: string, name: string) => void;
   resetForm: (formName: string) => void;
@@ -119,6 +121,39 @@ export const useFormStore = create<FormState & FormAction>((set, get) => ({
         forms: updatedForms
       }
     })
+  },
+  checkErrors: (formName) => {
+    let hasError = false;
+
+    set((state) => {
+      const form = state.forms[formName];
+      if (!form) return state;
+
+      const updatedForm = form.map((input) => {
+        let error: boolean;
+        let errorMessage: string;
+        errorMessage = errorHandling({ ...input, error: false, errorMessage: "" });
+        error = errorMessage !== "";
+
+        if (error) hasError = true;
+
+        return {
+          ...input,
+          error,
+          errorMessage,
+        };
+      });
+
+      return {
+        ...state,
+        forms: {
+          ...state.forms,
+          [formName]: updatedForm,
+        },
+      };
+    });
+
+    return hasError;
   },
   setError: (formName, name, errorMessage) => {
     return set((state) => {
