@@ -3536,23 +3536,18 @@
       "imports": [],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/_global-error/page_client-reference-manifest.js": {
-      "bytes": 5988,
-      "imports": [],
-      "format": "cjs"
-    },
     ".open-next/server-functions/default/.next/server/app/(home)/page_client-reference-manifest.js": {
       "bytes": 10563,
       "imports": [],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/blogs/[id]/page_client-reference-manifest.js": {
-      "bytes": 10407,
+    ".open-next/server-functions/default/.next/server/app/_global-error/page_client-reference-manifest.js": {
+      "bytes": 5988,
       "imports": [],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/(blogs)/crud-blog/page_client-reference-manifest.js": {
-      "bytes": 10493,
+    ".open-next/server-functions/default/.next/server/app/blogs/[id]/page_client-reference-manifest.js": {
+      "bytes": 10407,
       "imports": [],
       "format": "cjs"
     },
@@ -3566,18 +3561,13 @@
       "imports": [],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/.next/server/app/(blogs)/crud-blog/page_client-reference-manifest.js": {
+      "bytes": 10493,
+      "imports": [],
+      "format": "cjs"
+    },
     ".open-next/server-functions/default/.next/server/app/(auth)/forgot-password/page_client-reference-manifest.js": {
       "bytes": 10412,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/.next/server/app/api/v1/thumbnail/route_client-reference-manifest.js": {
-      "bytes": 319,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/.next/server/app/api/v1/inquiry/route_client-reference-manifest.js": {
-      "bytes": 317,
       "imports": [],
       "format": "cjs"
     },
@@ -3596,8 +3586,8 @@
       "imports": [],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/(blogs)/crud-blog/[id]/page_client-reference-manifest.js": {
-      "bytes": 10507,
+    ".open-next/server-functions/default/.next/server/app/api/v1/inquiry/route_client-reference-manifest.js": {
+      "bytes": 317,
       "imports": [],
       "format": "cjs"
     },
@@ -3606,8 +3596,13 @@
       "imports": [],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/api/v1/auth/reset-password/route_client-reference-manifest.js": {
-      "bytes": 329,
+    ".open-next/server-functions/default/.next/server/app/(blogs)/crud-blog/[id]/page_client-reference-manifest.js": {
+      "bytes": 10507,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/v1/blogs/[id]/route_client-reference-manifest.js": {
+      "bytes": 320,
       "imports": [],
       "format": "cjs"
     },
@@ -3616,8 +3611,23 @@
       "imports": [],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/.next/server/app/api/v1/auth/reset-password/route_client-reference-manifest.js": {
+      "bytes": 329,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/v1/thumbnail/route_client-reference-manifest.js": {
+      "bytes": 319,
+      "imports": [],
+      "format": "cjs"
+    },
     ".open-next/server-functions/default/.next/server/app/api/v1/auth/logout/route_client-reference-manifest.js": {
       "bytes": 321,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/v1/auth/login/route_client-reference-manifest.js": {
+      "bytes": 320,
       "imports": [],
       "format": "cjs"
     },
@@ -3633,16 +3643,6 @@
     },
     ".open-next/server-functions/default/.next/server/app/api/v1/auth/check-auth/route_client-reference-manifest.js": {
       "bytes": 325,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/.next/server/app/api/v1/blogs/[id]/route_client-reference-manifest.js": {
-      "bytes": 320,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/.next/server/app/api/v1/auth/login/route_client-reference-manifest.js": {
-      "bytes": 320,
       "imports": [],
       "format": "cjs"
     },
@@ -3680,24 +3680,19 @@
           "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/_not-found/page_client-reference-manifest.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/_global-error/page_client-reference-manifest.js",
-          "kind": "require-call",
-          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/_global-error/page_client-reference-manifest.js"
-        },
-        {
           "path": ".open-next/server-functions/default/.next/server/app/(home)/page_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/(home)/page_client-reference-manifest.js"
         },
         {
+          "path": ".open-next/server-functions/default/.next/server/app/_global-error/page_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/_global-error/page_client-reference-manifest.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/app/blogs/[id]/page_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/blogs/[id]/page_client-reference-manifest.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/.next/server/app/(blogs)/crud-blog/page_client-reference-manifest.js",
-          "kind": "require-call",
-          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/(blogs)/crud-blog/page_client-reference-manifest.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/(auth)/register/page_client-reference-manifest.js",
@@ -3710,19 +3705,14 @@
           "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/(auth)/login/page_client-reference-manifest.js"
         },
         {
+          "path": ".open-next/server-functions/default/.next/server/app/(blogs)/crud-blog/page_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/(blogs)/crud-blog/page_client-reference-manifest.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/app/(auth)/forgot-password/page_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/(auth)/forgot-password/page_client-reference-manifest.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/.next/server/app/api/v1/thumbnail/route_client-reference-manifest.js",
-          "kind": "require-call",
-          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/thumbnail/route_client-reference-manifest.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/.next/server/app/api/v1/inquiry/route_client-reference-manifest.js",
-          "kind": "require-call",
-          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/inquiry/route_client-reference-manifest.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/api/v1/products/route_client-reference-manifest.js",
@@ -3740,9 +3730,9 @@
           "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/blogs/route_client-reference-manifest.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/(blogs)/crud-blog/[id]/page_client-reference-manifest.js",
+          "path": ".open-next/server-functions/default/.next/server/app/api/v1/inquiry/route_client-reference-manifest.js",
           "kind": "require-call",
-          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/(blogs)/crud-blog/[id]/page_client-reference-manifest.js"
+          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/inquiry/route_client-reference-manifest.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/(auth)/reset-password/[token]/page_client-reference-manifest.js",
@@ -3750,9 +3740,14 @@
           "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/(auth)/reset-password/[token]/page_client-reference-manifest.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/api/v1/auth/reset-password/route_client-reference-manifest.js",
+          "path": ".open-next/server-functions/default/.next/server/app/(blogs)/crud-blog/[id]/page_client-reference-manifest.js",
           "kind": "require-call",
-          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/auth/reset-password/route_client-reference-manifest.js"
+          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/(blogs)/crud-blog/[id]/page_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/v1/blogs/[id]/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/blogs/[id]/route_client-reference-manifest.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/api/v1/auth/register/route_client-reference-manifest.js",
@@ -3760,9 +3755,24 @@
           "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/auth/register/route_client-reference-manifest.js"
         },
         {
+          "path": ".open-next/server-functions/default/.next/server/app/api/v1/auth/reset-password/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/auth/reset-password/route_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/v1/thumbnail/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/thumbnail/route_client-reference-manifest.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/app/api/v1/auth/logout/route_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/auth/logout/route_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/v1/auth/login/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/auth/login/route_client-reference-manifest.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/api/v1/auth/forgot-password/route_client-reference-manifest.js",
@@ -3778,16 +3788,6 @@
           "path": ".open-next/server-functions/default/.next/server/app/api/v1/auth/check-auth/route_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/auth/check-auth/route_client-reference-manifest.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/.next/server/app/api/v1/blogs/[id]/route_client-reference-manifest.js",
-          "kind": "require-call",
-          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/blogs/[id]/route_client-reference-manifest.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/.next/server/app/api/v1/auth/login/route_client-reference-manifest.js",
-          "kind": "require-call",
-          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/auth/login/route_client-reference-manifest.js"
         }
       ],
       "format": "cjs"
@@ -4276,7 +4276,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/chunks/ssr/_8da2eac1._.js": {
-      "bytes": 35870,
+      "bytes": 35786,
       "imports": [],
       "format": "cjs"
     },
@@ -11584,14 +11584,14 @@
           "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/(auth)/register/page_client-reference-manifest.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/(auth)/login/page_client-reference-manifest.js",
-          "kind": "require-call",
-          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/(auth)/login/page_client-reference-manifest.js"
-        },
-        {
           "path": ".open-next/server-functions/default/.next/server/app/(auth)/forgot-password/page_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/(auth)/forgot-password/page_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/(auth)/login/page_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/(auth)/login/page_client-reference-manifest.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/api/v1/thumbnail/route_client-reference-manifest.js",
@@ -11599,14 +11599,14 @@
           "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/thumbnail/route_client-reference-manifest.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/api/v1/products/route_client-reference-manifest.js",
-          "kind": "require-call",
-          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/products/route_client-reference-manifest.js"
-        },
-        {
           "path": ".open-next/server-functions/default/.next/server/app/api/v1/inquiry/route_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/inquiry/route_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/v1/products/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/products/route_client-reference-manifest.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/api/v1/health-check/route_client-reference-manifest.js",
@@ -11619,19 +11619,14 @@
           "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/blogs/route_client-reference-manifest.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/(blogs)/crud-blog/[id]/page_client-reference-manifest.js",
-          "kind": "require-call",
-          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/(blogs)/crud-blog/[id]/page_client-reference-manifest.js"
-        },
-        {
           "path": ".open-next/server-functions/default/.next/server/app/(auth)/reset-password/[token]/page_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/(auth)/reset-password/[token]/page_client-reference-manifest.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/api/v1/blogs/[id]/route_client-reference-manifest.js",
+          "path": ".open-next/server-functions/default/.next/server/app/(blogs)/crud-blog/[id]/page_client-reference-manifest.js",
           "kind": "require-call",
-          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/blogs/[id]/route_client-reference-manifest.js"
+          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/(blogs)/crud-blog/[id]/page_client-reference-manifest.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/api/v1/auth/reset-password/route_client-reference-manifest.js",
@@ -11644,14 +11639,19 @@
           "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/auth/register/route_client-reference-manifest.js"
         },
         {
+          "path": ".open-next/server-functions/default/.next/server/app/api/v1/auth/login/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/auth/login/route_client-reference-manifest.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/app/api/v1/auth/logout/route_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/auth/logout/route_client-reference-manifest.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/api/v1/auth/login/route_client-reference-manifest.js",
+          "path": ".open-next/server-functions/default/.next/server/app/api/v1/blogs/[id]/route_client-reference-manifest.js",
           "kind": "require-call",
-          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/auth/login/route_client-reference-manifest.js"
+          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/blogs/[id]/route_client-reference-manifest.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/api/v1/auth/forgot-password/route_client-reference-manifest.js",
@@ -11659,14 +11659,14 @@
           "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/auth/forgot-password/route_client-reference-manifest.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/api/v1/auth/check-token/route_client-reference-manifest.js",
-          "kind": "require-call",
-          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/auth/check-token/route_client-reference-manifest.js"
-        },
-        {
           "path": ".open-next/server-functions/default/.next/server/app/api/v1/auth/check-auth/route_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/auth/check-auth/route_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/v1/auth/check-token/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/Users/you.sebastian.1.618/Documents/projects/Personal/Vitali Nutrition Inc/vni/.open-next/server-functions/default/.next/server/app/api/v1/auth/check-token/route_client-reference-manifest.js"
         }
       ],
       "format": "cjs"
@@ -15721,17 +15721,14 @@
         ".open-next/server-functions/default/.next/server/app/_not-found/page_client-reference-manifest.js": {
           "bytesInOutput": 8739
         },
-        ".open-next/server-functions/default/.next/server/app/_global-error/page_client-reference-manifest.js": {
-          "bytesInOutput": 5754
-        },
         ".open-next/server-functions/default/.next/server/app/(home)/page_client-reference-manifest.js": {
           "bytesInOutput": 9985
         },
+        ".open-next/server-functions/default/.next/server/app/_global-error/page_client-reference-manifest.js": {
+          "bytesInOutput": 5754
+        },
         ".open-next/server-functions/default/.next/server/app/blogs/[id]/page_client-reference-manifest.js": {
           "bytesInOutput": 9833
-        },
-        ".open-next/server-functions/default/.next/server/app/(blogs)/crud-blog/page_client-reference-manifest.js": {
-          "bytesInOutput": 9926
         },
         ".open-next/server-functions/default/.next/server/app/(auth)/register/page_client-reference-manifest.js": {
           "bytesInOutput": 9829
@@ -15739,17 +15736,14 @@
         ".open-next/server-functions/default/.next/server/app/(auth)/login/page_client-reference-manifest.js": {
           "bytesInOutput": 9817
         },
+        ".open-next/server-functions/default/.next/server/app/(blogs)/crud-blog/page_client-reference-manifest.js": {
+          "bytesInOutput": 9926
+        },
         ".open-next/server-functions/default/.next/server/app/(auth)/forgot-password/page_client-reference-manifest.js": {
           "bytesInOutput": 9857
         },
-        ".open-next/server-functions/default/.next/server/app/api/v1/thumbnail/route_client-reference-manifest.js": {
-          "bytesInOutput": 473
-        },
-        ".open-next/server-functions/default/.next/server/app/api/v1/inquiry/route_client-reference-manifest.js": {
-          "bytesInOutput": 470
-        },
         ".open-next/server-functions/default/.next/server/app/api/v1/products/route_client-reference-manifest.js": {
-          "bytesInOutput": 472
+          "bytesInOutput": 471
         },
         ".open-next/server-functions/default/.next/server/app/api/v1/health-check/route_client-reference-manifest.js": {
           "bytesInOutput": 480
@@ -15757,35 +15751,41 @@
         ".open-next/server-functions/default/.next/server/app/api/v1/blogs/route_client-reference-manifest.js": {
           "bytesInOutput": 466
         },
-        ".open-next/server-functions/default/.next/server/app/(blogs)/crud-blog/[id]/page_client-reference-manifest.js": {
-          "bytesInOutput": 9946
+        ".open-next/server-functions/default/.next/server/app/api/v1/inquiry/route_client-reference-manifest.js": {
+          "bytesInOutput": 470
         },
         ".open-next/server-functions/default/.next/server/app/(auth)/reset-password/[token]/page_client-reference-manifest.js": {
           "bytesInOutput": 9898
         },
-        ".open-next/server-functions/default/.next/server/app/api/v1/auth/reset-password/route_client-reference-manifest.js": {
-          "bytesInOutput": 494
+        ".open-next/server-functions/default/.next/server/app/(blogs)/crud-blog/[id]/page_client-reference-manifest.js": {
+          "bytesInOutput": 9946
+        },
+        ".open-next/server-functions/default/.next/server/app/api/v1/blogs/[id]/route_client-reference-manifest.js": {
+          "bytesInOutput": 476
         },
         ".open-next/server-functions/default/.next/server/app/api/v1/auth/register/route_client-reference-manifest.js": {
           "bytesInOutput": 482
         },
+        ".open-next/server-functions/default/.next/server/app/api/v1/auth/reset-password/route_client-reference-manifest.js": {
+          "bytesInOutput": 494
+        },
+        ".open-next/server-functions/default/.next/server/app/api/v1/thumbnail/route_client-reference-manifest.js": {
+          "bytesInOutput": 474
+        },
         ".open-next/server-functions/default/.next/server/app/api/v1/auth/logout/route_client-reference-manifest.js": {
           "bytesInOutput": 478
         },
+        ".open-next/server-functions/default/.next/server/app/api/v1/auth/login/route_client-reference-manifest.js": {
+          "bytesInOutput": 477
+        },
         ".open-next/server-functions/default/.next/server/app/api/v1/auth/forgot-password/route_client-reference-manifest.js": {
-          "bytesInOutput": 496
+          "bytesInOutput": 497
         },
         ".open-next/server-functions/default/.next/server/app/api/v1/auth/check-token/route_client-reference-manifest.js": {
           "bytesInOutput": 489
         },
         ".open-next/server-functions/default/.next/server/app/api/v1/auth/check-auth/route_client-reference-manifest.js": {
           "bytesInOutput": 487
-        },
-        ".open-next/server-functions/default/.next/server/app/api/v1/blogs/[id]/route_client-reference-manifest.js": {
-          "bytesInOutput": 477
-        },
-        ".open-next/server-functions/default/.next/server/app/api/v1/auth/login/route_client-reference-manifest.js": {
-          "bytesInOutput": 477
         },
         ".open-next/server-functions/default/node_modules/next/dist/server/load-manifest.external.js": {
           "bytesInOutput": 26671
@@ -15863,7 +15863,7 @@
           "bytesInOutput": 7486
         },
         ".open-next/server-functions/default/.next/server/chunks/ssr/_8da2eac1._.js": {
-          "bytesInOutput": 36897
+          "bytesInOutput": 36813
         },
         ".open-next/server-functions/default/.next/server/chunks/ssr/_a3b9117b._.js": {
           "bytesInOutput": 91768
@@ -17156,7 +17156,7 @@
           "bytesInOutput": 56628
         }
       },
-      "bytes": 7218156
+      "bytes": 7218072
     }
   }
 }
