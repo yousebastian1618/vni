@@ -7,7 +7,7 @@ export function useApiAction() {
     const query = params
       ? `${new URLSearchParams(params).toString()}`
       : "";
-    const api = `${process.env.NEXT_PUBLIC_BASE_URL}${process.env.NEXT_PUBLIC_BASE_API_VERSION}${url}${query}`;
+    const api = `${process.env.NEXT_PUBLIC_BASE_API_VERSION}${url}${query}`;
     increment();
     try {
       const res = await fetch(api, {
@@ -20,7 +20,7 @@ export function useApiAction() {
     }
   }
   const apiPOST = async (url: string, payload?: any) => {
-    const api = `${process.env.NEXT_PUBLIC_BASE_URL}${process.env.NEXT_PUBLIC_BASE_API_VERSION}${url}`;
+    const api = `${process.env.NEXT_PUBLIC_BASE_API_VERSION}${url}`;
     increment();
     try {
       const isFormData = payload instanceof FormData;
@@ -40,7 +40,7 @@ export function useApiAction() {
     }
   }
   const apiPUT = async (url: string, payload?: any) => {
-    const api = `${process.env.NEXT_PUBLIC_BASE_URL}${process.env.NEXT_PUBLIC_BASE_API_VERSION}${url}`;
+    const api = `${process.env.NEXT_PUBLIC_BASE_API_VERSION}${url}`;
     increment();
     try {
       const response = await fetch(api, {
@@ -59,7 +59,7 @@ export function useApiAction() {
     }
   }
   const apiDELETE = async (url: string, payload?: any) => {
-    const api = `${process.env.NEXT_PUBLIC_BASE_URL}${process.env.NEXT_PUBLIC_BASE_API_VERSION}${url}`;
+    const api = `${process.env.NEXT_PUBLIC_BASE_API_VERSION}${url}`;
     increment();
     try {
       const params: any[] = payload;
