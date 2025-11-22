@@ -5,7 +5,7 @@ export function useApiAction() {
   const { increment, decrement } = useLoading();
   const apiGET = async (url: string, params?: Record<string, string>) => {
     const query = params
-      ? "?" + new URLSearchParams(params).toString()
+      ? `${new URLSearchParams(params).toString()}`
       : "";
     const api = `${process.env.NEXT_PUBLIC_BASE_URL}${process.env.NEXT_PUBLIC_BASE_API_VERSION}${url}${query}`;
     increment();
