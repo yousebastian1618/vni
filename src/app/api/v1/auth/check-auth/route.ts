@@ -1,8 +1,8 @@
-import {NextResponse} from "next/server";
+import {NextRequest, NextResponse} from "next/server";
 import {verifyJwt} from "@/lib/jwt";
 import prisma from "@/lib/prisma";
 
-export async function GET(req: NextResponse) {
+export async function GET(req: NextRequest) {
   try {
     const token = req.cookies.get("auth")?.value;
     if (!token) {
@@ -23,6 +23,6 @@ export async function GET(req: NextResponse) {
     }
     return NextResponse.json(user, { status: 200 })
   } catch (err) {
-    return NextResponse.json({ error: "server error" }, { status: 500 });
+    return NextResponse.json("something went wrong while checking auth", { status: 500 });
   }
 }
