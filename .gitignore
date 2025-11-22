@@ -10,6 +10,8 @@
 !.yarn/releases
 !.yarn/versions
 /wrangler.toml
+/.open-next
+/.idea
 
 # testing
 /coverage
