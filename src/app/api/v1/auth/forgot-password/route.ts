@@ -1,14 +1,15 @@
 import { prisma } from '@/lib/prisma';
-import { NextResponse } from "next/server";
+import {NextRequest, NextResponse} from "next/server";
 import {generateToken} from "@/objects/helper";
 
 type Props = {
   email: string;
 }
 
-export default async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   try {
-    const { email }: Props = await req.json();
+    const body = await req.json();
+    const { email } = body;
     const user = await prisma.user.findUnique({
       where: { email }
     });
