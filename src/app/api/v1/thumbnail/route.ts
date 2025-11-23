@@ -15,15 +15,20 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   const formData = await req.formData();
-  const file = formData.get('file') as File | null;
-  if (!file) return NextResponse.json(null)
-  const loc = formData.get('location') ?? '';
+  const file = formData.get('file');
+
+  if (!(file instanceof File)) {
+    return NextResponse.json({ error: 'file required' }, { status: 400 });
+  }
+
+  const loc = (formData.get('location') as string | null) ?? '';
   const id = uuid();
   const key = `${loc}${id}`;
+
   const arrayBuffer = await file.arrayBuffer();
-  const buffer = Buffer.from(arrayBuffer);
+  const body = new Uint8Array(arrayBuffer); // ✅ Worker-safe
   const contentType = file.type || 'application/octet-stream';
 
-  await putObject(key, buffer, contentType);
-  return NextResponse.json({ id });
+  await putObject(key, body, contentType);
+  return NextResponse.json({ id, key });
 }

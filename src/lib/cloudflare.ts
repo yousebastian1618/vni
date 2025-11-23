@@ -45,7 +45,7 @@ export async function getObject(key: string) {
 
 export async function putObject(
   key: string,
-  body: Buffer | Blob | string,
+  body: Uint8Array | Blob | string,
   contentType?: string
 ) {
   const cmd = new PutObjectCommand({

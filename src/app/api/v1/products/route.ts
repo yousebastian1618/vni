@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
     const id = uuid();
     const key = `${loc}${id}`;
     const arrayBuffer = await file.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
+    const body = new Uint8Array(arrayBuffer);
     const contentType = file.type || "application/octet-stream";
 
     await prisma.$transaction([
@@ -46,10 +46,10 @@ export async function POST(req: NextRequest) {
         }
       })
     ])
-    await putObject(key, buffer, contentType);
+    await putObject(key, body, contentType);
     return NextResponse.json('Successfully Uploaded', { status: 201 });
   } catch (error) {
-    return NextResponse.json(error, { status: 500 });
+    return NextResponse.json('Internal Server Error', { status: 500 });
   }
 }
 
