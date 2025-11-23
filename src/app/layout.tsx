@@ -6,6 +6,7 @@ import AppShell from "@/app/AppShell";
 import {AuthProvider} from "@/contexts/authContext";
 import {ModalProvider} from "@/contexts/modalContext";
 import {StatusProvider} from "@/contexts/statusContext";
+import React from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
