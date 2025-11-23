@@ -48,8 +48,11 @@ export async function POST(req: NextRequest) {
     ])
     await putObject(key, body, contentType);
     return NextResponse.json('Successfully Uploaded', { status: 201 });
-  } catch (error) {
-    return NextResponse.json('Internal Server Error', { status: 500 });
+  } catch (err: any) {
+    return NextResponse.json(
+      { ok: false, name: err.name, message: err.message },
+      { status: 500 }
+    );
   }
 }
 

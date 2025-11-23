@@ -48,13 +48,19 @@ export async function putObject(
   body: Uint8Array | Blob | string,
   contentType?: string
 ) {
-  const cmd = new PutObjectCommand({
-    Bucket: BUCKET,
-    Key: key,
-    Body: body,
-    ContentType: contentType
-  });
-  return cfClient.send(cmd);
+  try {
+    const cmd = new PutObjectCommand({
+      Bucket: BUCKET,
+      Key: key,
+      Body: body,
+      ContentType: contentType
+    });
+    return cfClient.send(cmd);
+  } catch (err) {
+    console.log(err);
+    return null;
+  }
+
 }
 
 export async function deleteObjects(keys: string[]) {

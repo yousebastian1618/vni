@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
   const key = `${loc}${id}`;
 
   const arrayBuffer = await file.arrayBuffer();
-  const body = new Uint8Array(arrayBuffer); // ✅ Worker-safe
+  const body = new Uint8Array(arrayBuffer);
   const contentType = file.type || 'application/octet-stream';
 
   await putObject(key, body, contentType);
