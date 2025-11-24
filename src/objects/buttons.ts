@@ -6,7 +6,7 @@ export const LoginButtons: Button[] = [
     label: 'Login',
     func: 'crud',
     crudType: 'POST',
-    keyDown: 'enter'
+    keyDown: 'Enter'
   }
 ]
 

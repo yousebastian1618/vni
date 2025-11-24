@@ -94,7 +94,7 @@ export const LoginForm: InputElement[] = [
     checkErrors: {
       "NOT_EMPTY": {
         criteria: "",
-        message: "Subject cannot be empty"
+        message: "Email cannot be empty"
       },
       "FORMAT": {
         criteria: "EMAIL",
@@ -131,7 +131,8 @@ export const RegisterForm: InputElement[] = [
     checkErrors: {
       "NOT_EMPTY": {
         criteria: "",
-        message: "Subject cannot be empty"
+        message: "" +
+          "Email cannot be empty"
       },
       "FORMAT": {
         criteria: "EMAIL",

@@ -3,7 +3,7 @@ import styles from './Form.module.scss';
 import type {Button as ButtonType, InputElement} from "@/types/types";
 import TextInput from "@/components/Form/Inputs/TextInput/TextInput";
 import Button from "@/components/Button/Button";
-import {useCallback, useEffect} from "react";
+import React, {useCallback, useEffect} from "react";
 import {useHandleClickAction} from "@/actions/clickAction";
 import FormFooter from "@/components/Form/FormFooter/FormFooter";
 import FileInput from "@/components/Form/Inputs/FileInput/FileInput";
@@ -40,7 +40,18 @@ export default function Form({ label, form, buttons }: Props) {
       resetForm(label);
     })
   }
-
+  const handleKeydown = async (e: React.KeyboardEvent<HTMLFormElement>) => {
+    if (e.key === 'Enter') {
+      if (buttons) {
+        for (const button of buttons) {
+          if (button.keyDown) {
+            await handleClick(button);
+            break;
+          }
+        }
+      }
+    }
+  }
 
   if (!forms[label]) {
     return null;
@@ -48,7 +59,7 @@ export default function Form({ label, form, buttons }: Props) {
 
   return (
     <>
-      <form className={styles.formContainer}>
+      <form className={styles.formContainer} onKeyDown={(e) => handleKeydown(e)}>
         {forms[label].map((formInput: InputElement) => {
           if (formInput.type === 'file') {
             return (
@@ -65,9 +76,9 @@ export default function Form({ label, form, buttons }: Props) {
           )
         })}
       </form>
-      <div className={styles.formFooter}>
-        <FormFooter pageTitle={label} />
-      </div>
+      {/*<div className={styles.formFooter}>*/}
+      {/*  <FormFooter pageTitle={label} />*/}
+      {/*</div>*/}
       <div className={styles.formButtons}>
         {buttons && buttons.map((button, index: number) => {
           return <Button key={index} button={button} handleButtonClick={() => handleClick(button)}/>
