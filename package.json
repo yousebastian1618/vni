@@ -6,10 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-
     "cloudflare-build": "npx opennextjs-cloudflare build",
     "cloudflare-deploy": "npx opennextjs-cloudflare build && npx opennextjs-cloudflare deploy",
-
     "lint": "biome check",
     "format": "biome format --write"
   },
