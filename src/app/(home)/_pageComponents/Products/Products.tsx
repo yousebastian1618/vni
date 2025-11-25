@@ -116,9 +116,11 @@ export default function Products() {
         setPageSize(items.length)
         setSelecting(true);
         setSelectedProducts([]);
+        setCurrentPage(0);
       } else if (name === 'sortProducts') {
         setPageSize(items.length)
         setSorting(true);
+        setCurrentPage(0);
       } else if (name === 'cancel') {
         setSelecting(false);
         setSorting(false);
@@ -139,6 +141,8 @@ export default function Products() {
       setSelecting(false);
       setSorting(false);
       setSelectedProducts([]);
+      setCurrentPage(0);
+      setPageSize(defaultPageSize);
     }
   }
 

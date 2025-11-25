@@ -24,10 +24,9 @@ type BlogSeedProps = {
 
 export default function BlogSeed({ blog }: BlogSeedProps) {
 
-  const { forms, convertToParams, setForm, addForm, checkErrors } = useFormStore();
+  const { forms, convertToParams, setForm, addForm, checkErrors, removeForm, swapFormNames } = useFormStore();
   const { setStatus } = useStatus();
   const router = useRouter();
-  const { swapFormNames } = useFormStore();
   const handleClickAction = useHandleClickAction();
   const [paragraphs, setParagraphs] = useState<ParagraphItem[]>([]);
   const [previewing, setPreviewing] = useState<boolean>(false);
@@ -128,6 +127,21 @@ export default function BlogSeed({ blog }: BlogSeedProps) {
     setParagraphs(updated);
   }
 
+  const removeParagraph = (index: number) => {
+    if (index < 0 || index >= paragraphs.length) return;
+    const formName = `Paragraph ${index + 1}`;
+    const totalParagraphs = paragraphs.length;
+    removeForm(formName);
+    for (let i = index + 2; i <= totalParagraphs; i += 1) {
+      swapFormNames(`Paragraph ${i}`, `Paragraph ${i - 1}`);
+    }
+    setParagraphs((curr: ParagraphItem[]) => {
+      const updated = [...curr];
+      updated.splice(index, 1);
+      return updated;
+    });
+  }
+
   return (
     <div className={styles.container}>
       <h2 className={styles.label}>{blog ? 'Edit Blog' : 'Add Blog'}</h2>
@@ -146,7 +160,7 @@ export default function BlogSeed({ blog }: BlogSeedProps) {
                     <h2 className={styles.paragraphTitle}>Paragraph {index + 1}</h2>
                     <Form label={`Paragraph ${index+1}`} form={paragraph.form} />
                     <div className={styles.removeButton}>
-                      <Button button={AdminBlogRemovalButton} />
+                      <Button button={AdminBlogRemovalButton} handleButtonClick={() => removeParagraph(index)}/>
                     </div>
                   </div>
                   {index !== paragraphs.length - 1 && (
