@@ -67,10 +67,12 @@ export default function Blogs() {
         setPageSize(items.length);
         setSelecting(true);
         setSelectedBlogs([]);
+        setCurrentPage(0);
       } else if (name === 'sortBlogs') {
         setPageSize(items.length);
         setSorting(true);
         setSelectedBlogs([]);
+        setCurrentPage(0);
       } else if (name === 'addBlogs') {
         router.push('/crud-blog');
       }
@@ -81,6 +83,7 @@ export default function Blogs() {
       }
       await handleClickAction(button, elements);
       await mutateBlogs();
+      setCurrentPage(0);
       setPageSize(defaultPageSize);
       setSelecting(false);
       setSorting(false);

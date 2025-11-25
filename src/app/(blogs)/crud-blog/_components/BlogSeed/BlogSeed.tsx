@@ -5,7 +5,7 @@ import {AddBlogForms, AddBlogParagraphForm} from "@/objects/forms";
 import {AdminBlogRemovalButton, AdminBlogsAddButtons, AdminCrudBlogsButtons} from "@/objects/buttons";
 import type {Blog, Button as ButtonType, InputElement} from "@/types/types";
 import Button from "@/components/Button/Button";
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import Icon from "@/components/Icon/Icon";
 import {useRouter} from "next/navigation";
 import {useHandleClickAction} from "@/actions/clickAction";
@@ -24,7 +24,7 @@ type BlogSeedProps = {
 
 export default function BlogSeed({ blog }: BlogSeedProps) {
 
-  const { forms, convertToParams, setForm, addForm, checkErrors, removeForm, swapFormNames } = useFormStore();
+  const { forms, convertToParams, setForm, addForm, checkErrors, removeForm, swapFormNames, resetForm } = useFormStore();
   const { setStatus } = useStatus();
   const router = useRouter();
   const handleClickAction = useHandleClickAction();
@@ -54,6 +54,15 @@ export default function BlogSeed({ blog }: BlogSeedProps) {
   }, [blog, setForm, addForm]);
 
 
+  const resetBlogForms = useCallback(() => {
+    resetForm('Blog');
+    paragraphs.forEach((_, idx) => {
+      const formName = `Paragraph ${idx + 1}`;
+      resetForm(formName);
+      removeForm(formName);
+    });
+    setParagraphs([]);
+  }, [paragraphs, removeForm, resetForm]);
 
   const filteredCrudButtons = () => {
     if (previewing) {
@@ -111,11 +120,15 @@ export default function BlogSeed({ blog }: BlogSeedProps) {
       if (blog) {
         currButton.name = 'update|/blog';
       }
-      await handleClickAction(currButton, {
+      const result = await handleClickAction(currButton, {
         'blog': updatedBlog,
         'paragraphs': paragraphs,
         'blogId': blog ? blog.id : null
       });
+      if (result?.status !== undefined && result.status < 400) {
+        resetBlogForms();
+        setPreviewing(false);
+      }
       router.push('/');
     }
   }

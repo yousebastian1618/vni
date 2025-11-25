@@ -88,6 +88,7 @@ export function useHandleClickAction() {
       if (message !== '') {
         setStatus(status >= 400 ? 'error' : 'success', message);
       }
+      return { status, message };
     }
 
 
